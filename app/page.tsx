@@ -9,6 +9,7 @@ import { useState } from 'react';
 import Footer from './components/Footer';
 import FAQSection from './components/FAQSection';
 import OrganizationSection from './components/OrganizationSection';
+import GlobalUsersSection from './components/GlobalUsersSection';
 
 export default function Home() {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(0);
@@ -150,7 +151,7 @@ export default function Home() {
 </section>
 
 
-     
+      <GlobalUsersSection />
       <OrganizationSection />
       <FAQSection questions={[
         "What is the ScaffoldingGen CLI Tool?",
