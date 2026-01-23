@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import FAQSection from './components/FAQSection';
 import OrganizationSection from './components/OrganizationSection';
 import GlobalUsersSection from './components/GlobalUsersSection';
+import MajorContributors from './components/MajorContributors';
 
 export default function Home() {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(0);
@@ -150,7 +151,7 @@ export default function Home() {
   </div>
 </section>
 
-
+      <MajorContributors />
       <GlobalUsersSection />
       <OrganizationSection />
       <FAQSection questions={[
