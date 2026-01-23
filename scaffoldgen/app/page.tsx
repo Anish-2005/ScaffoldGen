@@ -7,6 +7,7 @@ import AboutSection from './components/AboutSection';
 import DownloadReleaseSection from './components/DownloadReleaseSection';
 import { ChevronDown, Download, Github, Linkedin, Twitter } from 'lucide-react';
 import { useState } from 'react';
+import Footer from './components/Footer';
 
 export default function Home() {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(0);
@@ -162,104 +163,61 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-center text-3xl font-bold text-white sm:text-4xl">FAQ</h2>
-          <div className="mt-12 space-y-4">
-            {faqItems.map((item, idx) => (
-              <div
-                key={idx}
-                className="overflow-hidden rounded-lg border border-gray-800 bg-gray-900/50 transition hover:border-gray-700"
-              >
-                <button
-                  onClick={() => toggleFAQ(idx)}
-                  className="w-full px-6 py-4 text-left transition hover:bg-gray-900"
-                >
-                  <div className="flex items-center justify-between">
-                    <h3 className="font-semibold text-white">{item.question}</h3>
-                    <ChevronDown
-                      size={20}
-                      className={`flex-shrink-0 transition-transform duration-300 ${expandedFAQ === idx ? 'rotate-180' : ''
-                        } text-gray-400`}
-                    />
-                  </div>
-                </button>
-                {expandedFAQ === idx && (
-                  <div className="border-t border-gray-800 px-6 py-4 text-gray-400">
-                    {item.answer}
-                  </div>
-                )}
-              </div>
-            ))}
+      <section className="bg-black py-32">
+  <div className="mx-auto max-w-7xl px-6">
+
+    {/* Heading */}
+    <h2 className="mb-16 text-center text-4xl font-semibold text-white">
+      FAQ
+    </h2>
+
+    {/* Grid */}
+    <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+
+      {/* FAQ Item */}
+      {[
+        "What is the ScaffoldingGen CLI Tool?",
+        "How do I install the ScaffoldGen CLI Tool?",
+        "What features does the ScaffoldGen CLI Tool have?",
+        "How do I contribute to the Scaffolding CLI tool?",
+        "Is the ScaffoldGen CLI tool free to use?",
+        "Where can I get support?",
+      ].map((q, i) => (
+        <div
+          key={i}
+          className="relative rounded-xl border border-white/20 bg-gradient-to-r from-black via-black to-orange-950/60 px-6 py-5"
+        >
+          {/* Inner subtle highlight */}
+          <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-white/5" />
+
+          <div className="flex items-center justify-between">
+            <span className="text-[16px] font-medium text-white">
+              {q}
+            </span>
+
+            {/* Chevron */}
+            <svg
+              className="h-5 w-5 text-white/70"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
           </div>
         </div>
-      </section>
+      ))}
 
-      {/* Footer */}
-     <footer className="relative bg-black pt-24 pb-10">
-  {/* subtle top fade */}
-  <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-neutral-900/40 to-transparent" />
-
-  <div className="relative mx-auto max-w-7xl px-6">
-    <div className="grid grid-cols-1 gap-16 md:grid-cols-3">
-
-      {/* LEFT: Logo */}
-      <div>
-        <div className="flex items-center gap-3">
-          {/* Logo image */}
-          <img
-            src="/logo.png"
-            alt="ScaffoldGen logo"
-            className="h-8 w-40"
-          />
-
-        </div>
-      </div>
-
-      {/* MIDDLE: Quick Links */}
-      <div>
-        <h4 className="mb-6 text-lg font-medium text-white">
-          Quick Links
-        </h4>
-
-        <ul className="space-y-4 text-[15px] text-neutral-400">
-          <li className="transition hover:text-white">Downloads</li>
-          <li className="transition hover:text-white">Releases</li>
-          <li className="transition hover:text-white">Documentation</li>
-          <li className="transition hover:text-white">Support</li>
-        </ul>
-      </div>
-
-      {/* RIGHT: Social */}
-      <div>
-        <h4 className="mb-6 text-lg font-medium text-white">
-          Connect with Us
-        </h4>
-
-        <ul className="space-y-4 text-[15px] text-neutral-400">
-          <li className="flex items-center gap-3 transition hover:text-white">
-            <span className="text-lg">in</span>
-            LinkedIn
-          </li>
-          <li className="flex items-center gap-3 transition hover:text-white">
-            <span className="text-lg">⌂</span>
-            GitHub
-          </li>
-          <li className="flex items-center gap-3 transition hover:text-white">
-            <span className="text-lg">◌</span>
-            Discord
-          </li>
-        </ul>
-      </div>
-
-    </div>
-
-    {/* Bottom copyright */}
-    <div className="mt-20 text-sm text-neutral-500">
-      © 2024 ScaffoldGenCLI All rights reserved.
     </div>
   </div>
-</footer>
+</section>
+
+        <Footer />
 
     </div>
   );
