@@ -44,154 +44,275 @@ export default function Home() {
     { name: 'Name 3', role: 'Core Contributor' },
     { name: 'Name 4', role: 'Core Contributor' },
   ];
+function BottomGlow() {
+  return (
+    <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[260px]">
+      {/* Ambient base glow */}
+      <div
+        className="absolute left-1/2 -translate-x-1/2 bottom-[-45%] w-[600px] h-[400px] rounded-full blur-[80px]"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(255,120,40,0.45), rgba(255,120,40,0.15) 40%, transparent 70%)",
+        }}
+      />
+      {/* Main arc glow */}
+      <div
+        className="absolute left-1/2 -translate-x-1/2 bottom-[-55%] w-[800px] h-[480px] rounded-full blur-[40px]"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, rgba(255,140,60,0.9) 0%, rgba(255,120,40,0.55) 35%, rgba(255,90,20,0.25) 55%, transparent 70%)",
+          maskImage:
+            "radial-gradient(ellipse at center, black 45%, transparent 60%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse at center, black 45%, transparent 60%)",
+        }}
+      />
+      {/* Bright arc stroke */}
+      <div
+        className="absolute left-1/2 -translate-x-1/2 bottom-[-58%] w-[800px] h-[480px] rounded-full"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, transparent 58%, rgba(255,170,90,0.9) 60%, transparent 63%)",
+          filter: "blur(6px)",
+        }}
+      />
+    </div>
+  );
+}
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-950 to-black">
       {/* Navigation */}
-<nav className="sticky top-0 z-50 border-b border-neutral-800 bg-black/60 backdrop-blur">
-  <div className="mx-auto flex h-16 max-w-7xl items-center px-4 sm:px-6 lg:px-8">
+      <nav className="sticky top-0 z-50 border-b border-neutral-800 bg-black/60 backdrop-blur">
+        <div className="mx-auto flex h-16 max-w-7xl items-center px-4 sm:px-6 lg:px-8">
 
-    {/* Left: Logo */}
-    <div className="flex items-center gap-2">
-      <img
-        src="/logo.png"
-        alt="ScaffoldGen logo"
-        className="h-8 w-40"
-      />
-    </div>
+          {/* Left: Logo */}
+          <div className="flex items-center gap-2">
+            <img
+              src="/logo.png"
+              alt="ScaffoldGen logo"
+              className="h-8 w-40"
+            />
+          </div>
 
-    {/* Spacer */}
-    <div className="flex-1" />
+          {/* Spacer */}
+          <div className="flex-1" />
 
-    {/* Right: Nav items + Search + Links */}
-    <div className="flex items-center gap-6">
+          {/* Right: Nav items + Search + Links */}
+          <div className="flex items-center gap-6">
 
-      {/* Nav links (just left of search) */}
-      <div className="hidden items-center gap-6 md:flex">
-        <a
-          href="#"
-          className="text-sm text-neutral-400 transition hover:text-white"
-        >
-          Downloads
-        </a>
-        <a
-          href="#"
-          className="text-sm text-neutral-400 transition hover:text-white"
-        >
-          Releases
-        </a>
+            {/* Nav links (just left of search) */}
+            <div className="hidden items-center gap-6 md:flex">
+              <a
+                href="#"
+                className="text-sm text-neutral-400 transition hover:text-white"
+              >
+                Downloads
+              </a>
+              <a
+                href="#"
+                className="text-sm text-neutral-400 transition hover:text-white"
+              >
+                Releases
+              </a>
+            </div>
+
+            {/* Search */}
+            <div className="relative hidden sm:block">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="w-56 rounded-md border border-neutral-800 bg-neutral-900/60 px-4 py-2 text-base text-white placeholder-neutral-500 focus:border-neutral-600 focus:outline-none"
+              />
+              <svg
+                className="absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-neutral-500"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
+
+            <a
+              href="#"
+              className="text-sm text-neutral-400 transition hover:text-white"
+            >
+              Docs
+            </a>
+            <a
+              href="#"
+              className="text-sm text-neutral-400 transition hover:text-white"
+            >
+              Snippet Manager
+            </a>
+
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+<section className="relative min-h-screen overflow-hidden bg-black pt-32 pb-[28rem] text-center font-sans">
+
+  {/* Heading */}
+  <h1
+    className="
+      relative z-10
+      text-[48px]
+      font-semibold
+      tracking-[-0.015em]
+      text-orange-500
+    "
+  >
+    ScaffoldGen
+  </h1>
+
+  {/* Subtext */}
+  <p
+    className="
+      relative z-10
+      mx-auto mt-4 max-w-xl
+      text-[15px]
+      font-normal
+      leading-relaxed
+      text-neutral-300/80
+    "
+  >
+    A powerful command-line interface tool for developers, designed to streamline
+    your workflow and boost your productivity
+  </p>
+
+  {/* Buttons */}
+  <div className="relative z-10 mt-6 flex justify-center gap-4">
+    <button
+      className="
+        rounded-md
+        bg-orange-500
+        px-6 py-3
+        text-[14px]
+        font-medium
+        text-white
+        transition
+        hover:bg-orange-400
+      "
+    >
+      Download for Linux
+    </button>
+
+    <button
+      className="
+        rounded-md
+        border border-orange-500/70
+        px-6 py-3
+        text-[14px]
+        font-medium
+        text-orange-400
+        transition
+        hover:bg-orange-500/10
+      "
+    >
+      Download for Windows
+    </button>
+  </div>
+  {/* Bottom Glow */}
+  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[650px]">
+
+    {/* Ambient glow */}
+    <div
+      className="absolute left-1/2 top-[42%] h-[900px] w-[1700px] -translate-x-1/2 rounded-full"
+      style={{
+        background:
+          "radial-gradient(ellipse at center, rgba(255,140,60,0.38) 0%, rgba(255,110,40,0.28) 28%, rgba(255,80,20,0.18) 48%, transparent 66%)",
+        filter: "blur(130px)",
+      }}
+    />
+
+    {/* Bright arc rim (lifted + thinner) */}
+    <div
+      className="absolute left-1/2 top-[34%] h-[900px] w-[1700px] -translate-x-1/2 rounded-full"
+      style={{
+        background:
+          "radial-gradient(ellipse at center, transparent 60%, rgba(255,190,110,1) 61.2%, rgba(255,150,70,0.7) 62.4%, transparent 64%)",
+        filter: "blur(3px)",
+      }}
+    />
+
+    {/* Grainy lower edge */}
+    <div
+      className="absolute left-1/2 top-[50%] h-[380px] w-[1700px] -translate-x-1/2"
+      style={{
+        background:
+          "repeating-radial-gradient(circle at center, rgba(255,95,35,0.2) 0px, rgba(255,95,35,0.2) 1px, rgba(0,0,0,0) 2px)",
+        WebkitMaskImage:
+          "linear-gradient(to top, black 42%, transparent 78%)",
+        maskImage:
+          "linear-gradient(to top, black 42%, transparent 78%)",
+        filter: "blur(12px)",
+        opacity: 0.9,
+      }}
+    />
+
+  </div>
+</section>
+
+
+      {/* About Section */}
+      {/* Overlapping Info Section */}
+<section className="relative z-20 -mt-48 pb-32">
+  <div className="mx-auto max-w-6xl px-6">
+
+    <div className="grid gap-8 md:grid-cols-2">
+
+      {/* Left Card */}
+      <div className="rounded-xl border border-white/10 bg-neutral-900/80 p-8 backdrop-blur-md">
+        <h3 className="text-lg font-medium text-white">
+          About ScaffoldGen CLI
+        </h3>
+
+        <p className="mt-3 text-sm leading-relaxed text-neutral-400">
+          Our CLI tool is a powerful and versatile command-line interface that
+          helps developers streamline their workflow and boost productivity.
+          With a wide range of features and customization options, it is the
+          perfect tool for any developer looking to optimize their development
+          process.
+        </p>
+
+        <button className="mt-6 rounded-md bg-orange-500 px-4 py-2 text-sm font-medium text-white hover:bg-orange-400">
+          Learn More
+        </button>
       </div>
 
-      {/* Search */}
-      <div className="relative hidden sm:block">
-        <input
-          type="text"
-          placeholder="Search..."
-          className="w-56 rounded-md border border-neutral-800 bg-neutral-900/60 px-4 py-2 text-base text-white placeholder-neutral-500 focus:border-neutral-600 focus:outline-none"
-        />
-        <svg
-          className="absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-neutral-500"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
-          />
-        </svg>
-      </div>
+      {/* Right Card (Terminal) */}
+      <div className="rounded-xl border border-white/10 bg-neutral-900/80 p-6 backdrop-blur-md">
+        {/* Fake window controls */}
+        <div className="mb-4 flex items-center gap-2">
+          <span className="h-3 w-3 rounded-full bg-red-500/80" />
+          <span className="h-3 w-3 rounded-full bg-yellow-500/80" />
+          <span className="h-3 w-3 rounded-full bg-green-500/80" />
+          <span className="ml-auto text-xs text-neutral-400">
+            scaffoldgen
+          </span>
+        </div>
 
-      <a
-        href="#"
-        className="text-sm text-neutral-400 transition hover:text-white"
-      >
-        Docs
-      </a>
-      <a
-        href="#"
-        className="text-sm text-neutral-400 transition hover:text-white"
-      >
-        Snippet Manager
-      </a>
+        {/* Terminal content */}
+        <pre className="text-sm leading-relaxed text-neutral-200">
+<span className="text-green-400">$</span> cd web-development{"\n"}
+<span className="text-green-400">$</span> scaffoldgen new my-awesome-app --template next{"\n"}
+<span className="text-green-400">$</span> scaffoldgen generate component UserProfile{"\n"}
+<span className="text-green-400">$</span> scaffoldgen create route auth --handler login{"\n"}
+<span className="text-green-400">$</span> scaffoldgen config set default-lang python
+        </pre>
+      </div>
 
     </div>
   </div>
-</nav>
+</section>
 
-
-
-      {/* Hero Section */}
-      <section className="relative overflow-hidden px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <h1 className="text-5xl font-bold text-white sm:text-6xl lg:text-7xl">
-            <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
-              ScaffoldGen
-            </span>
-          </h1>
-          <p className="mt-6 text-lg text-gray-400 sm:text-xl">
-            A powerful command-line interface that connects interface builders and empowers you to create seamless workflows and boost your productivity.
-          </p>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <button className="inline-flex items-center justify-center rounded-lg bg-orange-600 px-8 py-3 font-semibold text-white transition hover:bg-orange-700">
-              Download for Mac
-            </button>
-            <button className="inline-flex items-center justify-center rounded-lg border border-gray-700 px-8 py-3 font-semibold text-white transition hover:border-gray-600 hover:bg-gray-900">
-              Download for Windows
-            </button>
-          </div>
-        </div>
-
-        {/* Glowing Arc */}
-        <div className="relative mt-20 h-64 w-full">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="absolute h-96 w-full max-w-2xl rounded-full border-t-2 border-orange-500 blur-sm opacity-70 shadow-[0_0_60px_rgba(249,115,22,0.4)]" />
-            <div className="absolute h-96 w-full max-w-2xl rounded-full border-t-2 border-orange-400 opacity-50" />
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-12 lg:grid-cols-2">
-            <div>
-              <h2 className="text-3xl font-bold text-white sm:text-4xl">About ScaffoldGen CLI</h2>
-              <p className="mt-6 text-gray-400">
-                Our CLI Suite is a powerful and versatile command-line interface that empowers developers and teams to work seamlessly together. With a suite of tools designed to streamline your development workflows and enable rapid prototyping, we make it easy to craft amazing applications.
-              </p>
-              <button className="mt-8 inline-flex items-center justify-center rounded-lg bg-orange-600 px-6 py-2 font-semibold text-white transition hover:bg-orange-700">
-                Learn More
-              </button>
-            </div>
-            <div className="flex items-center justify-center">
-              <div className="relative w-full rounded-lg bg-gray-950 p-6 font-mono text-sm">
-                <div className="mb-4 flex gap-2">
-                  <div className="size-3 rounded-full bg-red-500" />
-                  <div className="size-3 rounded-full bg-yellow-500" />
-                  <div className="size-3 rounded-full bg-green-500" />
-                </div>
-                <div className="space-y-2 text-gray-300">
-                  <p>
-                    <span className="text-orange-400">$</span> cd <span className="text-blue-400">latest-project</span>
-                  </p>
-                  <p>
-                    <span className="text-orange-400">$</span> scaffoldgen create --template <span className="text-green-400">react --template next</span>
-                  </p>
-                  <p>
-                    <span className="text-orange-400">$</span> scaffoldgen generate <span className="text-green-400">+components</span> <span className="text-green-400">+useEffect</span>
-                  </p>
-                  <p>
-                    <span className="text-orange-400">$</span> scaffoldgen create <span className="text-green-400">router</span> path <span className="text-green-400">--config</span> lang<span className="text-green-400">: python</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Latest Download & Release */}
       <section className="px-4 py-20 sm:px-6 lg:px-8">
@@ -306,15 +427,14 @@ export default function Home() {
               ].map((stat, idx) => (
                 <div
                   key={idx}
-                  className={`flex items-center justify-center rounded-xl bg-gray-600 font-bold text-white ${
-                    stat.size === 'sm'
+                  className={`flex items-center justify-center rounded-xl bg-gray-600 font-bold text-white ${stat.size === 'sm'
                       ? 'h-20 w-20 text-xs'
                       : stat.size === 'md'
                         ? 'h-24 w-24 text-sm'
                         : stat.size === 'lg'
                           ? 'h-28 w-28 text-lg'
                           : 'h-32 w-32 text-2xl'
-                  }`}
+                    }`}
                 >
                   {stat.label}
                 </div>
@@ -355,9 +475,8 @@ export default function Home() {
                     <h3 className="font-semibold text-white">{item.question}</h3>
                     <ChevronDown
                       size={20}
-                      className={`flex-shrink-0 transition-transform duration-300 ${
-                        expandedFAQ === idx ? 'rotate-180' : ''
-                      } text-gray-400`}
+                      className={`flex-shrink-0 transition-transform duration-300 ${expandedFAQ === idx ? 'rotate-180' : ''
+                        } text-gray-400`}
                     />
                   </div>
                 </button>
