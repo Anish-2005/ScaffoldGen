@@ -27,8 +27,8 @@ export default function GlobalUsersSection() {
 
       {/* ORANGE EDGE GLOWS (EXACT) */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-[320px] top-[-180px] h-[720px] w-[720px] rounded-full bg-orange-500/45 blur-[260px]" />
-        <div className="absolute -right-[300px] top-[-140px] h-[760px] w-[760px] rounded-full bg-orange-400/40 blur-[280px]" />
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[260px] w-[260px] rounded-full bg-orange-500/35 blur-[100px]" />
+        <div className="absolute -right-[80px] top-1/2 -translate-y-1/2 h-[220px] w-[220px] rounded-full bg-orange-400/30 blur-[80px]" />
       </div>
 
       {/* HEADER */}
@@ -53,10 +53,8 @@ export default function GlobalUsersSection() {
       rounded-[28px]
       px-20
       py-24
-      bg-gradient-to-br
-      from-[#2d2926]
-      via-[#24201d]
-      to-[#1a1714]
+      bg-white/20
+      backdrop-blur-xl
       shadow-[0_90px_180px_rgba(0,0,0,0.75)]
     "
   >

@@ -28,11 +28,11 @@ export default function MajorContributors() {
                 group
                 relative
                 h-[300px]
-                rounded-2xl
-                bg-gradient-to-br
+                rounded-lg
+                bg-gradient-to-r
                 from-black
-                via-[#1a1410]
-                to-[#3a1f0e]
+                via-black
+                to-yellow-900/60
                 p-6
                 transition-all
                 duration-500
@@ -43,7 +43,7 @@ export default function MajorContributors() {
               "
             >
               {/* Subtle inner sheen */}
-              <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-b from-white/5 via-transparent to-black/40" />
+              <div className="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 via-transparent to-black/40" />
 
               {/* Content */}
               <div className="relative z-10 flex h-full flex-col items-center">
