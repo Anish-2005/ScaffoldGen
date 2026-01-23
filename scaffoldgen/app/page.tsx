@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Navbar from './Navbar';
 import { ChevronDown, Download, Github, Linkedin, Twitter } from 'lucide-react';
 import { useState } from 'react';
 
@@ -82,91 +83,18 @@ function BottomGlow() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-950 to-black">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 border-b border-neutral-800 bg-black/60 backdrop-blur">
-        <div className="mx-auto flex h-16 max-w-7xl items-center px-4 sm:px-6 lg:px-8">
-
-          {/* Left: Logo */}
-          <div className="flex items-center gap-2">
-            <img
-              src="/logo.png"
-              alt="ScaffoldGen logo"
-              className="h-8 w-40"
-            />
-          </div>
-
-          {/* Spacer */}
-          <div className="flex-1" />
-
-          {/* Right: Nav items + Search + Links */}
-          <div className="flex items-center gap-6">
-
-            {/* Nav links (just left of search) */}
-            <div className="hidden items-center gap-6 md:flex">
-              <a
-                href="#"
-                className="text-sm text-neutral-400 transition hover:text-white"
-              >
-                Downloads
-              </a>
-              <a
-                href="#"
-                className="text-sm text-neutral-400 transition hover:text-white"
-              >
-                Releases
-              </a>
-            </div>
-
-            {/* Search */}
-            <div className="relative hidden sm:block">
-              <input
-                type="text"
-                placeholder="Search..."
-                className="w-56 rounded-md border border-neutral-800 bg-neutral-900/60 px-4 py-2 text-base text-white placeholder-neutral-500 focus:border-neutral-600 focus:outline-none"
-              />
-              <svg
-                className="absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-neutral-500"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </div>
-
-            <a
-              href="#"
-              className="text-sm text-neutral-400 transition hover:text-white"
-            >
-              Docs
-            </a>
-            <a
-              href="#"
-              className="text-sm text-neutral-400 transition hover:text-white"
-            >
-              Snippet Manager
-            </a>
-
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-<section className="relative min-h-screen overflow-hidden bg-black pt-32 pb-[28rem] text-center font-sans">
+      <Navbar />
+{/* Hero Section */}
+<section className="relative min-h-screen overflow-hidden bg-black pt-20 pb-[32rem] text-center font-sans">
 
   {/* Heading */}
   <h1
     className="
       relative z-10
-      text-[48px]
-      font-semibold
-      tracking-[-0.015em]
-      text-orange-500
+      text-[56px]
+      font-bold
+      tracking-tight
+      text-[#ff6b35]
     "
   >
     ScaffoldGen
@@ -176,11 +104,12 @@ function BottomGlow() {
   <p
     className="
       relative z-10
-      mx-auto mt-4 max-w-xl
-      text-[15px]
+      mx-auto mt-5 max-w-2xl
+      px-4
+      text-[16px]
       font-normal
       leading-relaxed
-      text-neutral-300/80
+      text-neutral-300/90
     "
   >
     A powerful command-line interface tool for developers, designed to streamline
@@ -188,17 +117,20 @@ function BottomGlow() {
   </p>
 
   {/* Buttons */}
-  <div className="relative z-10 mt-6 flex justify-center gap-4">
+  <div className="relative z-10 mt-8 flex justify-center gap-4 px-4">
     <button
       className="
-        rounded-md
-        bg-orange-500
-        px-6 py-3
-        text-[14px]
-        font-medium
+        rounded-lg
+        bg-[#ff6b35]
+        px-7 py-3.5
+        text-[15px]
+        font-semibold
         text-white
-        transition
-        hover:bg-orange-400
+        shadow-lg
+        shadow-orange-500/20
+        transition-all
+        hover:bg-[#ff7b45]
+        hover:shadow-orange-500/30
       "
     >
       Download for Linux
@@ -206,110 +138,172 @@ function BottomGlow() {
 
     <button
       className="
-        rounded-md
-        border border-orange-500/70
-        px-6 py-3
-        text-[14px]
-        font-medium
-        text-orange-400
-        transition
-        hover:bg-orange-500/10
+        rounded-lg
+        border-2 border-[#ff6b35]
+        bg-transparent
+        px-7 py-3.5
+        text-[15px]
+        font-semibold
+        text-[#ff6b35]
+        transition-all
+        hover:bg-[#ff6b35]/10
       "
     >
       Download for Windows
     </button>
   </div>
-  {/* Bottom Glow */}
-  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[650px]">
 
-    {/* Ambient glow */}
+  {/* Planet/Arc Glow Effect */}
+  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[750px]">
+
+    {/* Deep ambient base glow */}
     <div
-      className="absolute left-1/2 top-[42%] h-[900px] w-[1700px] -translate-x-1/2 rounded-full"
+      className="absolute left-1/2 top-[48%] h-[600px] w-[1100px] -translate-x-1/2 rounded-full"
       style={{
         background:
-          "radial-gradient(ellipse at center, rgba(255,140,60,0.38) 0%, rgba(255,110,40,0.28) 28%, rgba(255,80,20,0.18) 48%, transparent 66%)",
-        filter: "blur(130px)",
+          "radial-gradient(ellipse at center, rgba(200,80,30,0.2) 0%, rgba(180,70,25,0.15) 30%, rgba(140,50,20,0.08) 50%, transparent 70%)",
+        filter: "blur(120px)",
       }}
     />
 
-    {/* Bright arc rim (lifted + thinner) */}
+    {/* Mid-level warm glow */}
     <div
-      className="absolute left-1/2 top-[34%] h-[900px] w-[1700px] -translate-x-1/2 rounded-full"
+      className="absolute left-1/2 top-[44%] h-[600px] w-[1100px] -translate-x-1/2 rounded-full"
       style={{
         background:
-          "radial-gradient(ellipse at center, transparent 60%, rgba(255,190,110,1) 61.2%, rgba(255,150,70,0.7) 62.4%, transparent 64%)",
-        filter: "blur(3px)",
+          "radial-gradient(ellipse at center, rgba(255,140,50,0.22) 0%, rgba(255,120,40,0.16) 35%, rgba(240,100,30,0.1) 55%, transparent 72%)",
+        filter: "blur(80px)",
       }}
     />
 
-    {/* Grainy lower edge */}
+    {/* Bright inner core glow */}
     <div
-      className="absolute left-1/2 top-[50%] h-[380px] w-[1700px] -translate-x-1/2"
+      className="absolute left-1/2 top-[42%] h-[600px] w-[1100px] -translate-x-1/2 rounded-full"
       style={{
         background:
-          "repeating-radial-gradient(circle at center, rgba(255,95,35,0.2) 0px, rgba(255,95,35,0.2) 1px, rgba(0,0,0,0) 2px)",
-        WebkitMaskImage:
-          "linear-gradient(to top, black 42%, transparent 78%)",
-        maskImage:
-          "linear-gradient(to top, black 42%, transparent 78%)",
-        filter: "blur(12px)",
-        opacity: 0.9,
+          "radial-gradient(ellipse at center, rgba(255,200,120,0.18) 0%, rgba(255,160,80,0.14) 28%, rgba(255,140,60,0.08) 48%, transparent 62%)",
+        filter: "blur(50px)",
+      }}
+    />
+
+    {/* Sharp bright arc rim - main feature */}
+    <div
+      className="absolute left-1/2 top-[40%] h-[600px] w-[1100px] -translate-x-1/2 rounded-full"
+      style={{
+        background:
+          "radial-gradient(ellipse at center, transparent 58.5%, rgba(255,220,140,0.95) 59.8%, rgba(255,190,110,1) 60.3%, rgba(255,160,80,0.98) 60.8%, rgba(255,130,50,0.75) 61.5%, rgba(220,100,40,0.35) 62.5%, transparent 64%)",
+        filter: "blur(1.5px)",
+      }}
+    />
+
+    {/* Outer rim soft glow */}
+    <div
+      className="absolute left-1/2 top-[40%] h-[600px] w-[1100px] -translate-x-1/2 rounded-full"
+      style={{
+        background:
+          "radial-gradient(ellipse at center, transparent 58%, rgba(255,150,70,0.35) 60%, rgba(255,120,50,0.25) 61.5%, rgba(200,90,40,0.12) 63.5%, transparent 67%)",
+        filter: "blur(20px)",
+      }}
+    />
+
+    {/* Upper highlight/bloom */}
+    <div
+      className="absolute left-1/2 top-[38%] h-[600px] w-[1100px] -translate-x-1/2 rounded-full"
+      style={{
+        background:
+          "radial-gradient(ellipse at center, transparent 59%, rgba(255,230,180,0.4) 60.2%, transparent 61.5%)",
+        filter: "blur(8px)",
+      }}
+    />
+
+    {/* Bottom atmospheric fade with warmth */}
+    <div
+      className="absolute left-1/2 top-[54%] h-[450px] w-[1100px] -translate-x-1/2"
+      style={{
+        background:
+          "linear-gradient(to bottom, rgba(255,110,40,0.12) 0%, rgba(200,80,30,0.08) 25%, rgba(150,60,20,0.04) 50%, transparent 100%)",
+        filter: "blur(60px)",
+      }}
+    />
+
+    {/* Subtle lower edge definition */}
+    <div
+      className="absolute left-1/2 top-[58%] h-[350px] w-[1100px] -translate-x-1/2"
+      style={{
+        background:
+          "linear-gradient(to bottom, rgba(180,70,25,0.06) 0%, transparent 70%)",
+        filter: "blur(35px)",
       }}
     />
 
   </div>
 </section>
 
+ {/* About Section */}
+{/* About Section */}
+<section className="relative z-30 -mt-[260px] pb-40">
+  <div className="mx-auto max-w-7xl px-6">
+    
+    {/* Glow Shell */}
+    <div className="relative rounded-[28px] p-[2px]">
+      <div
+        className="absolute inset-0 rounded-[28px]"
+        style={{
+          background:
+            "radial-gradient(100% 100% at 50% 100%, rgba(255,120,40,0.4) 0%, rgba(255,120,40,0.2) 40%, transparent 70%)",
+          filter: "blur(60px)",
+        }}
+      />
 
-      {/* About Section */}
-      {/* Overlapping Info Section */}
-<section className="relative z-20 -mt-48 pb-32">
-  <div className="mx-auto max-w-6xl px-6">
+      {/* Inner Card */}
+      <div className="relative rounded-[24px] bg-black px-12 py-14">
+        <div className="grid items-center gap-12 md:grid-cols-2">
 
-    <div className="grid gap-8 md:grid-cols-2">
+          {/* Left Content */}
+          <div>
+            <h3 className="text-2xl font-semibold text-white">
+              About ScaffoldGen CLI
+            </h3>
 
-      {/* Left Card */}
-      <div className="rounded-xl border border-white/10 bg-neutral-900/80 p-8 backdrop-blur-md">
-        <h3 className="text-lg font-medium text-white">
-          About ScaffoldGen CLI
-        </h3>
+            <p className="mt-6 mb-8 max-w-md text-base leading-relaxed text-neutral-400">
+              Our CLI tool is a powerful and versatile command-line interface that
+              helps developers streamline their workflow and boost their productivity.
+              With a wide range of features and customization options, it's the
+              perfect tool for any developer looking to optimize their development
+              process.
+            </p>
 
-        <p className="mt-3 text-sm leading-relaxed text-neutral-400">
-          Our CLI tool is a powerful and versatile command-line interface that
-          helps developers streamline their workflow and boost productivity.
-          With a wide range of features and customization options, it is the
-          perfect tool for any developer looking to optimize their development
-          process.
-        </p>
+            <button className="rounded-lg bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-600">
+              Learn More
+            </button>
+          </div>
 
-        <button className="mt-6 rounded-md bg-orange-500 px-4 py-2 text-sm font-medium text-white hover:bg-orange-400">
-          Learn More
-        </button>
-      </div>
+          {/* Terminal */}
+          <div className="relative rounded-xl bg-[#1a1a1a] shadow-[0_20px_60px_rgba(0,0,0,0.7)]">
+            {/* Terminal Header */}
+            <div className="flex items-center gap-2 rounded-t-xl bg-[#2a2a2a] px-4 py-3">
+              <span className="h-3 w-3 rounded-full bg-red-500" />
+              <span className="h-3 w-3 rounded-full bg-yellow-400" />
+              <span className="h-3 w-3 rounded-full bg-green-500" />
+              <span className="ml-auto text-xs text-neutral-500">
+                scaffoldgen
+              </span>
+            </div>
 
-      {/* Right Card (Terminal) */}
-      <div className="rounded-xl border border-white/10 bg-neutral-900/80 p-6 backdrop-blur-md">
-        {/* Fake window controls */}
-        <div className="mb-4 flex items-center gap-2">
-          <span className="h-3 w-3 rounded-full bg-red-500/80" />
-          <span className="h-3 w-3 rounded-full bg-yellow-500/80" />
-          <span className="h-3 w-3 rounded-full bg-green-500/80" />
-          <span className="ml-auto text-xs text-neutral-400">
-            scaffoldgen
-          </span>
+            {/* Terminal Body */}
+            <pre className="px-6 py-8 text-sm leading-loose text-neutral-300" style={{ minHeight: '280px' }}>
+<span className="text-cyan-400">~&gt;</span> cd web_development{"\n"}
+<span className="text-cyan-400">~&gt;</span> scaffoldgen new **my-awesome-app** --template next{"\n"}
+<span className="text-cyan-400">~&gt;</span> scaffoldgen generate **component** UserProfile --t{"\n"}
+<span className="text-cyan-400">~&gt;</span> scaffoldgen create **route** auth --handler **logi{"\n"}
+<span className="text-cyan-400">~&gt;</span> scaffoldgen config set **default-lang** python
+            </pre>
+          </div>
+
         </div>
-
-        {/* Terminal content */}
-        <pre className="text-sm leading-relaxed text-neutral-200">
-<span className="text-green-400">$</span> cd web-development{"\n"}
-<span className="text-green-400">$</span> scaffoldgen new my-awesome-app --template next{"\n"}
-<span className="text-green-400">$</span> scaffoldgen generate component UserProfile{"\n"}
-<span className="text-green-400">$</span> scaffoldgen create route auth --handler login{"\n"}
-<span className="text-green-400">$</span> scaffoldgen config set default-lang python
-        </pre>
       </div>
-
     </div>
+
   </div>
 </section>
 
