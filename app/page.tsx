@@ -150,9 +150,8 @@ export default function Home() {
 </section>
 
 
+     
       <OrganizationSection />
-
-      {/* FAQ Section */}
       <FAQSection questions={[
         "What is the ScaffoldingGen CLI Tool?",
         "How do I install the ScaffoldGen CLI Tool?",
