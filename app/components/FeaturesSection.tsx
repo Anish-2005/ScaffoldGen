@@ -125,7 +125,7 @@ function Quadrant({
       `}
         >
             {/* HOVER EDGE GLOW - Subtle & Professional */}
-            <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 border border-orange-300 group-hover:shadow-[0_0_12px_2px_rgba(255,140,80,0.18)] group-hover:bg-orange-400/5" />
+            <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 border border-orange-900 group-hover:shadow-[0_0_12px_2px_rgba(255,140,80,0.18)] group-hover:bg-orange-400/5" />
 
             {/* ICON */}
             <div className={`mb-6 flex h-12 w-12 items-center justify-center rounded-xl ${iconBg}`}>

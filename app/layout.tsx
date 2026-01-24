@@ -2,6 +2,7 @@ import React from "react"
 import type { Metadata } from "next"
 import localFont from "next/font/local"
 import { Analytics } from "@vercel/analytics/next"
+import LoadingOverlay from "./components/LoadingOverlay"
 import "./globals.css"
 
 /* Satoshi Font (public/fonts, no semibold) */
@@ -54,6 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={satoshi.variable}>
       <body className="font-sans antialiased bg-black text-white">
+        <LoadingOverlay />
         {children}
         <Analytics />
       </body>
