@@ -24,8 +24,12 @@ export default function DownloadReleaseSection() {
                   latest release.
                 </p>
 
-                <button className="mt-6 rounded-md bg-orange-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-orange-400">
-                  Download for Linux
+                <button className="group relative mt-6 rounded-md bg-[#ff6b35] px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-[#ff9a6b] hover:scale-105 hover:shadow-[0_0_20px_rgba(255,107,53,0.4)] overflow-hidden">
+                  <span className="pointer-events-none absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="absolute inset-[-4px] rounded-md bg-[conic-gradient(from_0deg,transparent_0deg,rgba(255,180,120,0.8)_40deg,rgba(255,180,120,0.4)_70deg,transparent_110deg)] blur-[6px] animate-[perimeter-beam_2s_linear_infinite]" />
+                    <span className="absolute inset-[2px] rounded-md bg-[#ff6b35]" />
+                  </span>
+                  <span className="relative z-10 group-hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.7)] transition-all duration-300">Download for Linux</span>
                 </button>
               </div>
 
@@ -40,8 +44,12 @@ export default function DownloadReleaseSection() {
                   and improvements. See what’s new and get the latest version.
                 </p>
 
-                <button className="mt-6 rounded-md bg-orange-500 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-orange-400">
-                  View Latest Release
+                <button className="group relative mt-6 rounded-md bg-[#ff6b35] px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-[#ff9a6b] hover:scale-105 hover:shadow-[0_0_20px_rgba(255,107,53,0.4)] overflow-hidden">
+                  <span className="pointer-events-none absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="absolute inset-[-4px] rounded-md bg-[conic-gradient(from_0deg,transparent_0deg,rgba(255,180,120,0.8)_40deg,rgba(255,180,120,0.4)_70deg,transparent_110deg)] blur-[6px] animate-[perimeter-beam_2s_linear_infinite]" />
+                    <span className="absolute inset-[2px] rounded-md bg-[#ff6b35]" />
+                  </span>
+                  <span className="relative z-10 group-hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.7)] transition-all duration-300">View Latest Release</span>
                 </button>
               </div>
 

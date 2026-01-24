@@ -166,8 +166,12 @@ export default function AboutSection() {
                       process.
                     </p>
 
-                    <button className="mt-6 md:mt-7 rounded-md bg-orange-500 px-5 py-2.5 text-xs md:text-[13px] lg:text-[13.5px] font-medium text-white transition hover:bg-orange-400">
-                      Learn More
+                    <button className="group relative mt-6 md:mt-7 rounded-md bg-[#ff6b35] px-5 py-2.5 text-xs md:text-[13px] lg:text-[13.5px] font-medium text-white transition-all duration-300 hover:bg-[#ff9a6b] hover:scale-105 hover:shadow-[0_0_20px_rgba(255,107,53,0.4)] overflow-hidden">
+                      <span className="pointer-events-none absolute inset-0 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <span className="absolute inset-[-4px] rounded-md bg-[conic-gradient(from_0deg,transparent_0deg,rgba(255,180,120,0.8)_40deg,rgba(255,180,120,0.4)_70deg,transparent_110deg)] blur-[6px] animate-[perimeter-beam_2s_linear_infinite]" />
+                        <span className="absolute inset-[2px] rounded-md bg-[#ff6b35]" />
+                      </span>
+                      <span className="relative z-10 group-hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.7)] transition-all duration-300">Learn More</span>
                     </button>
 
                     {/* spacing preserved for desktop */}
@@ -185,17 +189,17 @@ export default function AboutSection() {
                       <div className="min-w-[200px] sm:min-w-[240px] md:min-w-[280px] lg:min-w-[320px] xl:min-w-[380px] rounded-lg md:rounded-xl lg:rounded-2xl bg-neutral-950 shadow-[0_20px_60px_rgba(0,0,0,0.8)] md:shadow-[0_25px_70px_rgba(0,0,0,0.8)] lg:shadow-[0_30px_80px_rgba(0,0,0,0.8)]">
 
                         {/* HEADER */}
-                        <div className="flex items-center gap-2 rounded-t-lg md:rounded-t-xl lg:rounded-t-2xl bg-neutral-800 px-2 py-2 sm:px-3 sm:py-2.5 md:px-4 md:py-3 lg:px-5 lg:py-3">
-                          <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 md:h-3 md:w-3 rounded-full bg-red-500" />
-                          <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 md:h-3 md:w-3 rounded-full bg-yellow-400" />
-                          <span className="h-2 w-2 sm:h-2.5 sm:w-2.5 md:h-3 md:w-3 rounded-full bg-green-500" />
-                          <span className="ml-auto text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs">
+                        <div className="flex items-center gap-2 rounded-t-lg md:rounded-t-xl lg:rounded-t-2xl bg-neutral-800 px-3 py-2.5 sm:px-3 sm:py-2.5 md:px-4 md:py-3 lg:px-5 lg:py-3">
+                          <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 rounded-full bg-red-500" />
+                          <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 rounded-full bg-yellow-400" />
+                          <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 rounded-full bg-green-500" />
+                          <span className="ml-auto text-[10px] sm:text-[11px] md:text-[12px] lg:text-xs">
                             scaffoldgen
                           </span>
                         </div>
 
                         {/* BODY */}
-                        <pre className="px-2 pt-2 pb-3 sm:px-3 sm:pt-3 sm:pb-4 md:px-4 md:pt-4 md:pb-5 lg:px-5 lg:pt-4 lg:pb-6 xl:px-6 xl:pt-5 xl:pb-8 text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs xl:text-[12.5px] leading-relaxed text-neutral-200 whitespace-pre overflow-x-auto">
+                        <pre className="px-3 pt-3 pb-4 sm:px-3 sm:pt-3 sm:pb-4 md:px-4 md:pt-4 md:pb-5 lg:px-5 lg:pt-4 lg:pb-6 xl:px-6 xl:pt-5 xl:pb-8 text-[10px] sm:text-[11px] md:text-[12px] lg:text-sm xl:text-[13px] leading-relaxed text-neutral-200 whitespace-pre overflow-x-auto">
                           {renderText()}
                         </pre>
 

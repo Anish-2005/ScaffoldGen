@@ -88,5 +88,15 @@ body {
 .loading-overlay .relative > .relative {
   animation: gentle-pulse 1.8s ease-in-out infinite;
 }
+@keyframes border-beam {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes perimeter-beam {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 
