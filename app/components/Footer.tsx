@@ -1,5 +1,5 @@
 "use client"
-
+import Image from "next/image"
 import ComponentLoader from "./ComponentLoader"
 import AnimatedOnScroll from "./AnimatedOnScroll"
 
@@ -17,7 +17,9 @@ export default function Footer() {
               {/* ================= LEFT: LOGO ================= */}
               <div className="flex justify-center md:justify-start">
                 <div className="flex items-center gap-3">
-                  <img
+                  <Image 
+                    width={160}
+                    height={32}
                     src="/logo.png"
                     alt="ScaffoldGen logo"
                     className="h-8 sm:h-9 w-auto max-w-[160px]"

@@ -1,7 +1,90 @@
 import ComponentLoader from "./ComponentLoader"
 import AnimatedOnScroll from "./AnimatedOnScroll"
+import { useState, useEffect } from 'react'
 
 export default function AboutSection() {
+  const [currentLine, setCurrentLine] = useState(0)
+  const [currentChar, setCurrentChar] = useState(0)
+
+  const lines = [
+    [
+      { text: '~', class: 'text-cyan-400' },
+      { text: '>', class: 'text-green-400' },
+      { text: ' cd web_development', class: '' },
+      { text: '\n', class: '' },
+    ],
+    [
+      { text: '~', class: 'text-cyan-400' },
+      { text: '>', class: 'text-green-400' },
+      { text: ' scaffoldgen new ', class: 'text-yellow-300' },
+      { text: '**my-awesome-app**', class: 'text-yellow-300' },
+      { text: ' --template next-ts --style tailwind', class: '' },
+      { text: '\n', class: '' },
+    ],
+    [
+      { text: '~', class: 'text-cyan-400' },
+      { text: '>', class: 'text-green-400' },
+      { text: ' scaffoldgen generate ', class: 'text-yellow-300' },
+      { text: '**component**', class: 'text-yellow-300' },
+      { text: ' UserProfile --type rfc', class: '' },
+      { text: '\n', class: '' },
+    ],
+    [
+      { text: '~', class: 'text-cyan-400' },
+      { text: '>', class: 'text-green-400' },
+      { text: ' scaffoldgen create ', class: 'text-yellow-300' },
+      { text: '**route**', class: 'text-yellow-300' },
+      { text: ' auth --handler login,register', class: '' },
+      { text: '\n', class: '' },
+    ],
+    [
+      { text: '~', class: 'text-cyan-400' },
+      { text: '>', class: 'text-green-400' },
+      { text: ' scaffoldgen config set ', class: 'text-yellow-300' },
+      { text: '**default-lang**', class: 'text-yellow-300' },
+      { text: ' python', class: '' },
+    ],
+  ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentChar((prev) => {
+        const line = lines[currentLine]
+        if (prev < line.length - 1) {
+          return prev + 1
+        } else {
+          if (currentLine < lines.length - 1) {
+            setCurrentLine(currentLine + 1)
+            return 0
+          } else {
+            // Reset
+            setCurrentLine(0)
+            return 0
+          }
+        }
+      })
+    }, 300) // Adjust speed
+
+    return () => clearInterval(interval)
+  }, [currentLine, lines])
+
+  const renderText = () => {
+    let elements = []
+    for (let i = 0; i <= currentLine; i++) {
+      const line = lines[i]
+      const upTo = i === currentLine ? currentChar : line.length
+      for (let j = 0; j < upTo; j++) {
+        const part = line[j]
+        elements.push(
+          <span key={`${i}-${j}`} className={part.class}>
+            {part.text}
+          </span>
+        )
+      }
+    }
+    return elements
+  }
+
   return (
     <ComponentLoader variant="AboutSection">
       <AnimatedOnScroll variant="fadeUp">
@@ -9,11 +92,11 @@ export default function AboutSection() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
             {/* ORANGE GLOW SHELL */}
-       <div className="relative rounded-[20px] md:rounded-[24px] lg:rounded-[28px] p-[2px]">
+            <div className="relative rounded-[20px] md:rounded-[24px] lg:rounded-[28px] p-[2px]">
 
-  {/* PRIMARY GLOW */}
-  <div
-    className="
+              {/* PRIMARY GLOW */}
+              <div
+                className="
       absolute inset-[-8%]
       rounded-[28px]
       bg-[radial-gradient(ellipse_at_bottom_right,rgba(255,120,40,0.85)_0%,rgba(255,120,40,0.45)_30%,rgba(255,90,20,0.25)_48%,transparent_65%)]
@@ -22,18 +105,18 @@ export default function AboutSection() {
       lg:blur-[56px]
       opacity-90
     "
-  />
+              />
 
-  {/* SOFT EDGE BOOST (very subtle) */}
-  <div
-    className="
+              {/* SOFT EDGE BOOST (very subtle) */}
+              <div
+                className="
       absolute inset-[-4%]
       rounded-[26px]
       bg-[radial-gradient(ellipse_at_bottom_right,rgba(255,140,60,0.25)_0%,transparent_60%)]
       blur-[22px]
       opacity-60
     "
-  />
+              />
 
 
               {/* MAIN FLOATING CARD */}
@@ -84,11 +167,7 @@ export default function AboutSection() {
 
                         {/* BODY */}
                         <pre className="px-2 pt-2 pb-3 sm:px-3 sm:pt-3 sm:pb-4 md:px-4 md:pt-4 md:pb-5 lg:px-5 lg:pt-4 lg:pb-6 xl:px-6 xl:pt-5 xl:pb-8 text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs xl:text-[12.5px] leading-relaxed text-neutral-200 whitespace-pre overflow-x-auto">
-<span className="text-cyan-400">~</span><span className="text-green-400">&gt;</span> <span className="text-yellow-300">cd</span> <span className="text-white">web_development</span>{"\n"}
-<span className="text-cyan-400">~</span><span className="text-green-400">&gt;</span> <span className="text-yellow-300">scaffoldgen new</span> <span className="text-yellow-300">**my-awesome-app**--template next-ts --style tailwind </span> {"\n"}
-<span className="text-cyan-400">~</span><span className="text-green-400">&gt;</span> <span className="text-yellow-300">scaffoldgen generate</span> <span className="text-yellow-300">**component** UserProfile --type rfc </span> {"\n"}
-<span className="text-cyan-400">~</span><span className="text-green-400">&gt;</span> <span className="text-yellow-300">scaffoldgen create</span> <span className="text-yellow-300">**route** auth --handler login,register </span> {"\n"}
-<span className="text-cyan-400">~</span><span className="text-green-400">&gt;</span> <span className="text-yellow-300">scaffoldgen config set</span> <span className="text-yellow-300">**default-lang** python </span> 
+                          {renderText()}
                         </pre>
 
                       </div>

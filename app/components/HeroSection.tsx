@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <ComponentLoader variant="HeroSection">
       <AnimatedOnScroll variant="zoomIn">
-        <section className="relative min-h-screen overflow-hidden bg-black pt-20 pb-[12rem] text-center font-sans md:pb-[28rem] lg:pb-[32rem]">
+        <section className="relative min-h-screen overflow-hidden bg-black pt-32 sm:pt-36 pb-[12rem] text-center font-sans md:pb-[28rem] lg:pb-[40rem]">
           {/* Heading */}
           <h1 className="relative z-10 px-4 text-4xl font-bold tracking-tight text-[#ff6b35] sm:text-5xl md:text-6xl lg:text-[56px] lg:px-0">
             ScaffoldGen
@@ -28,6 +28,9 @@ export default function HeroSection() {
           
           {/* Planet/Arc Glow Effect - Fixed positioning for mobile */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[300px] sm:h-[400px] md:h-[550px] lg:h-[750px]">
+            {/* Upper orangish glow above the curve */}
+            <div className="absolute left-1/2 top-[20%] h-[250px] w-full max-w-[700px] -translate-x-1/2 rounded-full sm:top-[22%] sm:h-[300px] sm:max-w-[900px] md:top-[25%] md:h-[350px] md:max-w-[1100px] lg:top-[28%] lg:h-[450px] lg:w-[1300px] lg:max-w-none" style={{ background: "linear-gradient(to top, rgba(255,120,40,0.2) 0%, rgba(255,100,30,0.12) 50%, rgba(255,80,20,0.06) 70%, transparent 100%)", filter: "blur(60px)" }} />
+            
             {/* Deep ambient base glow */}
             <div className="absolute left-1/2 top-[50%] h-[250px] w-full max-w-[500px] -translate-x-1/2 rounded-full sm:top-[55%] sm:h-[300px] sm:max-w-[700px] md:top-[52%] md:h-[400px] md:max-w-[900px] lg:top-[48%] lg:h-[600px] lg:w-[1100px] lg:max-w-none" style={{ background: "radial-gradient(ellipse at center, rgba(200,80,30,0.2) 0%, rgba(180,70,25,0.15) 30%, rgba(140,50,20,0.08) 50%, transparent 70%)", filter: "blur(120px)" }} />
             

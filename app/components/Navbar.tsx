@@ -17,8 +17,8 @@ export default function Navbar() {
             {/* LEFT — LOGO */}
             <div className="flex items-center gap-2">
               <Image
-                width={40}
-                height={8}
+                width={160}
+                height={32}
                 src="/logo.png"
                 alt="ScaffoldGen logo"
                 className="h-8 w-40 object-contain"
