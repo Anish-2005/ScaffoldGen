@@ -1,8 +1,6 @@
 "use client"
 import Image from "next/image"
 import { Github, MessageCircle, Linkedin } from "lucide-react"
-import ComponentLoader from "./ComponentLoader"
-import AnimatedOnScroll from "./AnimatedOnScroll"
 
 export default function Footer() {
   return (
