@@ -123,26 +123,26 @@ export default function AboutSection() {
             {/* ORANGE GLOW SHELL */}
             <div className="relative rounded-[20px] md:rounded-[24px] lg:rounded-[28px] p-[2px]">
 
-              {/* PRIMARY GLOW */}
+              {/* PRIMARY GLOW - BOTTOM */}
               <div
                 className="
       absolute inset-[-8%]
       rounded-[28px]
-      bg-[radial-gradient(ellipse_at_bottom_right,rgba(255,120,40,0.85)_0%,rgba(255,120,40,0.45)_30%,rgba(255,90,20,0.25)_48%,transparent_65%)]
-      blur-[40px]
-      md:blur-[48px]
-      lg:blur-[56px]
+      bg-[radial-gradient(ellipse_at_bottom,rgba(255,120,40,0.85)_0%,rgba(255,120,40,0.45)_20%,rgba(255,90,20,0.25)_40%,transparent_100%)]
+      blur-[60px]
+      md:blur-[70px]
+      lg:blur-[80px]
       opacity-90
     "
               />
 
-              {/* SOFT EDGE BOOST (very subtle) */}
+              {/* SOFT EDGE BOOST - RIGHT */}
               <div
                 className="
       absolute inset-[-4%]
       rounded-[26px]
-      bg-[radial-gradient(ellipse_at_bottom_right,rgba(255,140,60,0.25)_0%,transparent_60%)]
-      blur-[22px]
+      bg-[radial-gradient(ellipse_at_right,rgba(255,140,60,0.25)_0%,transparent_100%)]
+      blur-[40px]
       opacity-60
     "
               />
