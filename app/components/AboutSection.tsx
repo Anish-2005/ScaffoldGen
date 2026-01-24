@@ -5,85 +5,114 @@ import { useState, useEffect } from 'react'
 export default function AboutSection() {
   const [currentLine, setCurrentLine] = useState(0)
   const [currentChar, setCurrentChar] = useState(0)
+  const [paused, setPaused] = useState(false)
 
   const lines = [
-    [
-      { text: '~', class: 'text-cyan-400' },
-      { text: '>', class: 'text-green-400' },
-      { text: ' cd web_development', class: '' },
-      { text: '\n', class: '' },
-    ],
-    [
-      { text: '~', class: 'text-cyan-400' },
-      { text: '>', class: 'text-green-400' },
-      { text: ' scaffoldgen new ', class: 'text-yellow-300' },
-      { text: '**my-awesome-app**', class: 'text-yellow-300' },
-      { text: ' --template next-ts --style tailwind', class: '' },
-      { text: '\n', class: '' },
-    ],
-    [
-      { text: '~', class: 'text-cyan-400' },
-      { text: '>', class: 'text-green-400' },
-      { text: ' scaffoldgen generate ', class: 'text-yellow-300' },
-      { text: '**component**', class: 'text-yellow-300' },
-      { text: ' UserProfile --type rfc', class: '' },
-      { text: '\n', class: '' },
-    ],
-    [
-      { text: '~', class: 'text-cyan-400' },
-      { text: '>', class: 'text-green-400' },
-      { text: ' scaffoldgen create ', class: 'text-yellow-300' },
-      { text: '**route**', class: 'text-yellow-300' },
-      { text: ' auth --handler login,register', class: '' },
-      { text: '\n', class: '' },
-    ],
-    [
-      { text: '~', class: 'text-cyan-400' },
-      { text: '>', class: 'text-green-400' },
-      { text: ' scaffoldgen config set ', class: 'text-yellow-300' },
-      { text: '**default-lang**', class: 'text-yellow-300' },
-      { text: ' python', class: '' },
-    ],
+    {
+      text: "~> cd web_development\n",
+      colors: [
+        { start: 0, end: 1, class: 'text-cyan-400' },
+        { start: 1, end: 2, class: 'text-green-400' },
+        { start: 3, end: 5, class: 'text-yellow-300' },
+        { start: 5, end: 21, class: '' },
+      ],
+    },
+    {
+      text: "~> scaffoldgen new **my-awesome-app** --template next-ts --style tailwind\n",
+      colors: [
+        { start: 0, end: 1, class: 'text-cyan-400' },
+        { start: 1, end: 2, class: 'text-green-400' },
+        { start: 3, end: 13, class: 'text-yellow-300' },
+        { start: 13, end: 30, class: 'text-yellow-300' },
+        { start: 30, end: 65, class: '' },
+      ],
+    },
+    {
+      text: "~> scaffoldgen generate **component** UserProfile --type rfc\n",
+      colors: [
+        { start: 0, end: 1, class: 'text-cyan-400' },
+        { start: 1, end: 2, class: 'text-green-400' },
+        { start: 3, end: 23, class: 'text-yellow-300' },
+        { start: 23, end: 34, class: 'text-yellow-300' },
+        { start: 34, end: 54, class: '' },
+      ],
+    },
+    {
+      text: "~> scaffoldgen create **route** auth --handler login,register\n",
+      colors: [
+        { start: 0, end: 1, class: 'text-cyan-400' },
+        { start: 1, end: 2, class: 'text-green-400' },
+        { start: 3, end: 20, class: 'text-yellow-300' },
+        { start: 20, end: 27, class: 'text-yellow-300' },
+        { start: 27, end: 58, class: '' },
+      ],
+    },
+    {
+      text: "~> scaffoldgen config set **default-lang** python",
+      colors: [
+        { start: 0, end: 1, class: 'text-cyan-400' },
+        { start: 1, end: 2, class: 'text-green-400' },
+        { start: 3, end: 23, class: 'text-yellow-300' },
+        { start: 23, end: 38, class: 'text-yellow-300' },
+        { start: 38, end: 44, class: '' },
+      ],
+    },
   ]
 
+  const renderColoredText = (text: string, colors: { start: number; end: number; class: string }[], keyPrefix: string) => {
+    let result: JSX.Element[] = []
+    let lastEnd = 0
+    for (let color of colors) {
+      if (color.start >= text.length) continue
+      if (lastEnd < color.start) {
+        result.push(<span key={`${keyPrefix}-${lastEnd}`}>{text.substring(lastEnd, color.start)}</span>)
+      }
+      result.push(<span key={`${keyPrefix}-${color.start}`} className={color.class}>{text.substring(color.start, Math.min(color.end, text.length))}</span>)
+      lastEnd = Math.max(lastEnd, color.end)
+    }
+    if (lastEnd < text.length) {
+      result.push(<span key={`${keyPrefix}-${lastEnd}`}>{text.substring(lastEnd)}</span>)
+    }
+    return result
+  }
+
+  const renderText = () => {
+    let elements: JSX.Element[] = []
+    for (let i = 0; i <= currentLine; i++) {
+      const line = lines[i]
+      const textToRender = i === currentLine ? line.text.substring(0, currentChar) : line.text
+      elements.push(...renderColoredText(textToRender, line.colors, `line-${i}`))
+    }
+    return elements
+  }
+
   useEffect(() => {
+    if (paused) return
+
     const interval = setInterval(() => {
       setCurrentChar((prev) => {
         const line = lines[currentLine]
-        if (prev < line.length - 1) {
+        if (prev < line.text.length) {
           return prev + 1
         } else {
           if (currentLine < lines.length - 1) {
             setCurrentLine(currentLine + 1)
             return 0
           } else {
-            // Reset
-            setCurrentLine(0)
-            return 0
+            setPaused(true)
+            setTimeout(() => {
+              setPaused(false)
+              setCurrentLine(0)
+              setCurrentChar(0)
+            }, 2000)
+            return prev
           }
         }
       })
-    }, 300) // Adjust speed
+    }, 50) // Adjust speed
 
     return () => clearInterval(interval)
-  }, [currentLine, lines])
-
-  const renderText = () => {
-    let elements = []
-    for (let i = 0; i <= currentLine; i++) {
-      const line = lines[i]
-      const upTo = i === currentLine ? currentChar : line.length
-      for (let j = 0; j < upTo; j++) {
-        const part = line[j]
-        elements.push(
-          <span key={`${i}-${j}`} className={part.class}>
-            {part.text}
-          </span>
-        )
-      }
-    }
-    return elements
-  }
+  }, [currentLine, lines, paused])
 
   return (
     <ComponentLoader variant="AboutSection">
