@@ -3,9 +3,11 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Coins, Wallet, BarChart, PieChart } from "lucide-react"
+import ComponentLoader from "./ComponentLoader"
 
 export default function FeaturesSection() {
     return (
+        <ComponentLoader variant="FeaturesSection">
         <section className="relative bg-black py-36 overflow-hidden">
             <div className="relative mx-auto max-w-[1400px] px-6">
 
@@ -94,6 +96,7 @@ export default function FeaturesSection() {
                 </div>
             </div>
         </section>
+        </ComponentLoader>
     )
 }
 

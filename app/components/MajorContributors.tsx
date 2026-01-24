@@ -1,6 +1,7 @@
 "use client"
 
 import { ImageIcon } from "lucide-react"
+import ComponentLoader from "./ComponentLoader"
 
 export default function MajorContributors() {
   const contributors = [
@@ -11,6 +12,7 @@ export default function MajorContributors() {
   ]
 
   return (
+    <ComponentLoader variant="MajorContributors">
     <section className="relative bg-black py-28">
       <div className="mx-auto max-w-[1280px] px-6">
 
@@ -105,5 +107,6 @@ export default function MajorContributors() {
         </div>
       </div>
     </section>
+    </ComponentLoader>
   )
 }

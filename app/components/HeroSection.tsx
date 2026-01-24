@@ -1,6 +1,9 @@
+import ComponentLoader from "./ComponentLoader"
+
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black pt-20 pb-[32rem] text-center font-sans">
+    <ComponentLoader variant="HeroSection">
+      <section className="relative min-h-screen overflow-hidden bg-black pt-20 pb-[32rem] text-center font-sans">
       {/* Heading */}
       <h1 className="relative z-10 text-[56px] font-bold tracking-tight text-[#ff6b35]">ScaffoldGen</h1>
       {/* Subtext */}
@@ -35,6 +38,7 @@ export default function HeroSection() {
         {/* Subtle lower edge definition */}
         <div className="absolute left-1/2 top-[58%] h-[350px] w-[1100px] -translate-x-1/2" style={{ background: "linear-gradient(to bottom, rgba(180,70,25,0.06) 0%, transparent 70%)", filter: "blur(35px)" }} />
       </div>
-    </section>
-  );
+      </section>
+    </ComponentLoader>
+  )
 }

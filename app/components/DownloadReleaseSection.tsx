@@ -1,5 +1,8 @@
+import ComponentLoader from "./ComponentLoader"
+
 export default function DownloadReleaseSection() {
   return (
+    <ComponentLoader variant="DownloadReleaseSection">
     <section className="relative z-10 bg-transparent py-24">
       <div className="mx-auto max-w-7xl w-full px-6">
         <div className="grid gap-20 md:grid-cols-2 place-content-center mx-auto">
@@ -33,5 +36,6 @@ export default function DownloadReleaseSection() {
         </div>
       </div>
     </section>
+    </ComponentLoader>
   );
 }

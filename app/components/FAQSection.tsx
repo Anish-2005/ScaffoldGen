@@ -1,9 +1,12 @@
+import ComponentLoader from "./ComponentLoader"
+
 interface FAQSectionProps {
   questions: string[];
 }
 
 export default function FAQSection({ questions }: FAQSectionProps) {
   return (
+    <ComponentLoader variant="FAQSection">
     <section className="bg-black py-32">
       <div className="mx-auto max-w-7xl px-6">
         {/* Heading */}
@@ -43,5 +46,6 @@ export default function FAQSection({ questions }: FAQSectionProps) {
         </div>
       </div>
     </section>
+    </ComponentLoader>
   );
 }

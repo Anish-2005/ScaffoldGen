@@ -1,5 +1,8 @@
+import ComponentLoader from "./ComponentLoader"
+
 export default function AboutSection() {
   return (
+    <ComponentLoader variant="AboutSection">
     <section className="relative z-30 -mt-[280px] pb-44">
       <div className="mx-auto max-w-7xl px-6">
         {/* ORANGE GLOW SHELL */}
@@ -66,5 +69,6 @@ export default function AboutSection() {
         </div>
       </div>
     </section>
+    </ComponentLoader>
   );
 }
