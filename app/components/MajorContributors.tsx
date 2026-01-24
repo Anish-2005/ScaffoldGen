@@ -40,8 +40,9 @@ export default function MajorContributors() {
                     p-5 lg:p-6
                     transition-all
                     duration-500
-                    hover:-translate-y-2
-                    hover:shadow-[0_30px_80px_rgba(255,120,40,0.25)]
+                    hover:-translate-y-3
+                    hover:scale-105
+                    hover:shadow-[0_30px_80px_rgba(255,120,40,0.25),0_0_40px_rgba(255,120,40,0.15)]
                     flex
                     flex-col
                   "
@@ -66,6 +67,12 @@ export default function MajorContributors() {
                         border
                         border-white/20
                         text-white/60
+                        transition-all
+                        duration-300
+                        group-hover:scale-110
+                        group-hover:border-orange-400/50
+                        group-hover:text-orange-300
+                        group-hover:shadow-[0_0_15px_rgba(255,120,40,0.5)]
                       "
                     >
                       {c.image ? (
@@ -81,10 +88,10 @@ export default function MajorContributors() {
 
                     {/* Name + Role pinned to bottom */}
                     <div className="mt-auto pb-2 text-center">
-                      <p className="text-base sm:text-lg font-medium text-white leading-tight">
+                      <p className="text-base sm:text-lg font-medium text-white leading-tight transition-all duration-300 group-hover:text-orange-200 group-hover:drop-shadow-[0_0_6px_rgba(255,165,0,0.4)]">
                         {c.name}
                       </p>
-                      <p className="mt-1 text-sm text-white/50">
+                      <p className="mt-1 text-sm text-white/50 transition-all duration-300 group-hover:text-white/70">
                         {c.role}
                       </p>
                     </div>
@@ -96,12 +103,12 @@ export default function MajorContributors() {
                       pointer-events-none
                       absolute
                       inset-0
-                      rounded-2xl
+                      rounded-lg
                       opacity-0
                       transition-opacity
                       duration-500
                       group-hover:opacity-100
-                      shadow-[inset_0_0_60px_rgba(255,120,40,0.35)]
+                      shadow-[inset_0_0_60px_rgba(255,120,40,0.35),0_0_30px_rgba(255,120,40,0.2)]
                     "
                   />
                 </div>

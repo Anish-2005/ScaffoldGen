@@ -50,6 +50,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                 <div
                   key={index}
                   className="
+                    group
                     relative
                     rounded-[16px] sm:rounded-[20px]
                     bg-gradient-to-br
@@ -61,6 +62,12 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                     ring-white/10
                     shadow-[0_8px_32px_0_rgba(255,120,40,0.15)]
                     backdrop-blur-sm
+                    transition-all
+                    duration-500
+                    hover:-translate-y-2
+                    hover:scale-[1.02]
+                    hover:shadow-[0_20px_60px_0_rgba(255,120,40,0.25),0_0_40px_rgba(255,120,40,0.1)]
+                    hover:ring-orange-400/20
                   "
                 >
                   {/* GLOW EFFECT */}
@@ -71,13 +78,17 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
               bg-[radial-gradient(ellipse_at_top_right,rgba(255,120,40,0.1)_0%,transparent_60%)]
               blur-[20px]
               opacity-50
+              transition-all
+              duration-500
+              group-hover:opacity-80
+              group-hover:blur-[25px]
             "
                   />
 
                   {/* QUOTE ICON */}
                   <div className="relative z-10 mb-4">
                     <svg
-                      className="w-8 h-8 text-orange-400"
+                      className="w-8 h-8 text-orange-400 transition-all duration-300 group-hover:scale-110 group-hover:text-orange-300 group-hover:drop-shadow-[0_0_8px_rgba(255,165,0,0.6)]"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
@@ -86,7 +97,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                   </div>
 
                   {/* QUOTE */}
-                  <blockquote className="relative z-10 text-sm sm:text-base text-neutral-200 leading-relaxed mb-6">
+                  <blockquote className="relative z-10 text-sm sm:text-base text-neutral-200 leading-relaxed mb-6 transition-all duration-300 group-hover:text-white/90 group-hover:drop-shadow-[0_0_4px_rgba(255,255,255,0.1)]">
                     "{testimonial.quote}"
                   </blockquote>
 
@@ -96,20 +107,20 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                       <img
                         src={testimonial.avatar}
                         alt={testimonial.name}
-                        className="w-10 h-10 rounded-full ring-2 ring-orange-400/30"
+                        className="w-10 h-10 rounded-full ring-2 ring-orange-400/30 transition-all duration-300 group-hover:scale-110 group-hover:ring-orange-400/60 group-hover:shadow-[0_0_15px_rgba(255,120,40,0.4)]"
                       />
                     ) : (
-                      <div className="w-10 h-10 rounded-full bg-orange-400/20 ring-2 ring-orange-400/30 flex items-center justify-center">
-                        <span className="text-orange-400 font-semibold text-sm">
+                      <div className="w-10 h-10 rounded-full bg-orange-400/20 ring-2 ring-orange-400/30 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-orange-400/30 group-hover:ring-orange-400/60 group-hover:shadow-[0_0_15px_rgba(255,120,40,0.4)]">
+                        <span className="text-orange-400 font-semibold text-sm transition-all duration-300 group-hover:text-orange-300">
                           {testimonial.name.charAt(0)}
                         </span>
                       </div>
                     )}
                     <div>
-                      <div className="text-white font-medium text-sm sm:text-base">
+                      <div className="text-white font-medium text-sm sm:text-base transition-all duration-300 group-hover:text-orange-200 group-hover:drop-shadow-[0_0_6px_rgba(255,165,0,0.4)]">
                         {testimonial.name}
                       </div>
-                      <div className="text-neutral-400 text-xs sm:text-sm">
+                      <div className="text-neutral-400 text-xs sm:text-sm transition-all duration-300 group-hover:text-neutral-300">
                         {testimonial.role}
                       </div>
                     </div>

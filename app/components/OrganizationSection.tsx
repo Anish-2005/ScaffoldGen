@@ -20,28 +20,36 @@ export default function OrganizationSection() {
             <div className="flex justify-center">
               <div
                 className="
+                  group
                   relative
                   h-[200px] sm:h-[220px]
                   w-full max-w-[320px] sm:max-w-[360px]
                   rounded-2xl
                   bg-gradient-to-r
                   from-black
-                  via-black
-                  to-yellow-900/60
+                  to-yellow-900/80
+                  transition-all
+                  duration-500
+                  hover:-translate-y-3
+                  hover:scale-105
+                  hover:shadow-[0_25px_60px_rgba(255,120,40,0.3),0_0_40px_rgba(255,120,40,0.15)]
                 "
               >
                 {/* Soft inner shading */}
                 <div className="pointer-events-none absolute inset-0 rounded-2xl bg-black/40" />
 
+                {/* Hover glow */}
+                <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 shadow-[inset_0_0_50px_rgba(255,120,40,0.25)]" />
+
                 {/* Content */}
                 <div className="relative flex h-full flex-col items-center justify-center gap-4">
                   {/* Icon */}
-                  <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg border border-white/20">
-                    <Image className="h-4 w-4 sm:h-5 sm:w-5 text-white/70" />
+                  <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg border border-white/20 transition-all duration-300 group-hover:scale-110 group-hover:border-yellow-400/50 group-hover:shadow-[0_0_15px_rgba(255,120,40,0.5)]">
+                    <Image className="h-4 w-4 sm:h-5 sm:w-5 text-white/70 transition-all duration-300 group-hover:text-yellow-300" />
                   </div>
 
                   {/* Text */}
-                  <span className="text-base sm:text-lg font-medium text-white">
+                  <span className="text-base sm:text-lg font-medium text-white transition-all duration-300 group-hover:text-yellow-200 group-hover:drop-shadow-[0_0_8px_rgba(255,120,40,0.6)]">
                     Resourcio Community
                   </span>
                 </div>

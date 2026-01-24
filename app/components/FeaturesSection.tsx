@@ -122,20 +122,22 @@ function Quadrant({
                 px-6 lg:px-10
                 py-10 lg:py-14
                 flex flex-col items-center justify-center text-center
+                transition-all duration-500
+                hover:scale-105 hover:-translate-y-2
                 ${gradient}
             `}
         >
-            <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 border border-orange-900 group-hover:shadow-[0_0_12px_2px_rgba(255,140,80,0.18)] group-hover:bg-orange-400/5" />
+            <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 border border-orange-900 group-hover:shadow-[0_0_12px_2px_rgba(255,140,80,0.18),0_0_25px_rgba(255,140,80,0.1)] group-hover:bg-orange-400/5" />
 
-            <div className={`mb-6 flex h-12 w-12 items-center justify-center rounded-xl ${iconBg}`}>
+            <div className={`mb-6 flex h-12 w-12 items-center justify-center rounded-xl ${iconBg} transition-all duration-300 group-hover:scale-110`}>
                 {icon}
             </div>
 
-            <h3 className="mb-4 text-lg lg:text-xl font-semibold text-white leading-snug max-w-[360px]">
+            <h3 className="mb-4 text-lg lg:text-xl font-semibold text-white leading-snug max-w-[360px] transition-all duration-300 group-hover:text-orange-300 group-hover:drop-shadow-[0_0_8px_rgba(255,165,0,0.5)]">
                 {title}
             </h3>
 
-            <p className="text-sm leading-relaxed text-white/55 max-w-[360px]">
+            <p className="text-sm leading-relaxed text-white/55 max-w-[360px] transition-all duration-300 group-hover:text-white/80">
                 {desc}
             </p>
         </div>
