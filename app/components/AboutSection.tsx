@@ -1,6 +1,6 @@
 import ComponentLoader from "./ComponentLoader"
 import AnimatedOnScroll from "./AnimatedOnScroll"
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const lines = [
   {
@@ -60,7 +60,7 @@ export default function AboutSection() {
   const [paused, setPaused] = useState(false)
 
   const renderColoredText = (text: string, colors: { start: number; end: number; class: string }[], keyPrefix: string) => {
-    const result: JSX.Element[] = []
+    const result: React.ReactElement[] = []
     let lastEnd = 0
     for (const color of colors) {
       if (color.start >= text.length) continue
@@ -77,7 +77,7 @@ export default function AboutSection() {
   }
 
   const renderText = () => {
-    const elements: JSX.Element[] = []
+    const elements: React.ReactElement[] = []
     for (let i = 0; i <= currentLine; i++) {
       const line = lines[i]
       const textToRender = i === currentLine ? line.text.substring(0, currentChar) : line.text
