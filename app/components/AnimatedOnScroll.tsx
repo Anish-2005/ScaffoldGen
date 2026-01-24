@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import React from "react"
 
 const variants: Record<string, any> = {
@@ -36,13 +36,14 @@ export default function AnimatedOnScroll({
   className?: string
 }) {
   const chosen = variants[variant] ?? variants.fadeUp
+  const shouldReduceMotion = useReducedMotion()
 
   return (
     <motion.div
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.18 }}
-      variants={chosen}
+      initial={shouldReduceMotion ? "visible" : "hidden"}
+      whileInView={shouldReduceMotion ? "visible" : "visible"}
+      viewport={{ once: true, amount: 0.38 }}
+      variants={shouldReduceMotion ? { visible: { opacity: 1 } } : chosen}
       className={className}
     >
       {children}
