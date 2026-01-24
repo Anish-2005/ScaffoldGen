@@ -1,8 +1,10 @@
 import ComponentLoader from "./ComponentLoader"
+import AnimatedOnScroll from "./AnimatedOnScroll"
 
 export default function AboutSection() {
   return (
     <ComponentLoader variant="AboutSection">
+    <AnimatedOnScroll variant="fadeUp">
     <section className="relative z-30 -mt-[280px] pb-44">
       <div className="mx-auto max-w-7xl px-6">
         {/* ORANGE GLOW SHELL */}
@@ -69,6 +71,7 @@ export default function AboutSection() {
         </div>
       </div>
     </section>
+    </AnimatedOnScroll>
     </ComponentLoader>
   );
 }

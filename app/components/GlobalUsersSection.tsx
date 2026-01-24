@@ -3,6 +3,7 @@
 import { motion, animate, useMotionValue } from "framer-motion"
 import { useEffect, useState } from "react"
 import ComponentLoader from "./ComponentLoader"
+import AnimatedOnScroll from "./AnimatedOnScroll"
 
 /* ---------------- COUNT UP ---------------- */
 function CountUp({ value }: { value: number }) {
@@ -25,6 +26,7 @@ function CountUp({ value }: { value: number }) {
 export default function GlobalUsersSection() {
   return (
     <ComponentLoader variant="GlobalUsersSection">
+    <AnimatedOnScroll variant="fadeUp">
     <section className="relative overflow-hidden bg-black py-32">
 
       {/* ORANGE EDGE GLOWS (EXACT) */}
@@ -174,6 +176,7 @@ export default function GlobalUsersSection() {
 
 
     </section>
+    </AnimatedOnScroll>
     </ComponentLoader>
   )
 }

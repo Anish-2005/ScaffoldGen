@@ -1,8 +1,10 @@
 import ComponentLoader from "./ComponentLoader"
+import AnimatedOnScroll from "./AnimatedOnScroll"
 
 export default function Footer() {
   return (
     <ComponentLoader variant="Footer">
+    <AnimatedOnScroll variant="fadeUp">
     <footer className="relative bg-black pt-24 pb-10">
   {/* subtle top fade */}
   <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-neutral-900/40 to-transparent" />
@@ -67,7 +69,8 @@ export default function Footer() {
     </div>
   </div>
 </footer>
-    </ComponentLoader>
+  </AnimatedOnScroll>
+  </ComponentLoader>
 
   );
 }

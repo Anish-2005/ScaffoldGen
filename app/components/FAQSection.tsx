@@ -1,4 +1,5 @@
 import ComponentLoader from "./ComponentLoader"
+import AnimatedOnScroll from "./AnimatedOnScroll"
 
 interface FAQSectionProps {
   questions: string[];
@@ -7,6 +8,7 @@ interface FAQSectionProps {
 export default function FAQSection({ questions }: FAQSectionProps) {
   return (
     <ComponentLoader variant="FAQSection">
+    <AnimatedOnScroll variant="fadeUp">
     <section className="bg-black py-32">
       <div className="mx-auto max-w-7xl px-6">
         {/* Heading */}
@@ -46,6 +48,7 @@ export default function FAQSection({ questions }: FAQSectionProps) {
         </div>
       </div>
     </section>
+    </AnimatedOnScroll>
     </ComponentLoader>
   );
 }

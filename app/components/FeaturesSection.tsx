@@ -4,11 +4,13 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { Coins, Wallet, BarChart, PieChart } from "lucide-react"
 import ComponentLoader from "./ComponentLoader"
+import AnimatedOnScroll from "./AnimatedOnScroll"
 
 export default function FeaturesSection() {
     return (
         <ComponentLoader variant="FeaturesSection">
-        <section className="relative bg-black py-36 overflow-hidden">
+            <AnimatedOnScroll variant="fadeIn">
+            <section className="relative bg-black py-36 overflow-hidden">
             <div className="relative mx-auto max-w-[1400px] px-6">
 
                 {/* CENTER HUB */}
@@ -96,6 +98,7 @@ export default function FeaturesSection() {
                 </div>
             </div>
         </section>
+        </AnimatedOnScroll>
         </ComponentLoader>
     )
 }

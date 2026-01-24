@@ -1,9 +1,11 @@
 import { Image } from "lucide-react";
 import ComponentLoader from "./ComponentLoader"
+import AnimatedOnScroll from "./AnimatedOnScroll"
 
 export default function OrganizationSection() {
   return (
     <ComponentLoader variant="OrganizationSection">
+    <AnimatedOnScroll variant="fadeIn">
      <section className="bg-black pt-32">
   <div className="mx-auto max-w-7xl px-6 text-center">
 
@@ -36,6 +38,7 @@ export default function OrganizationSection() {
 
   </div>
 </section>
-    </ComponentLoader>
+  </AnimatedOnScroll>
+  </ComponentLoader>
   );
 }
