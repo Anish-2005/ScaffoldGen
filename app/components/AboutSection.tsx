@@ -9,15 +9,32 @@ export default function AboutSection() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
             {/* ORANGE GLOW SHELL */}
-            <div className="relative rounded-[20px] md:rounded-[24px] lg:rounded-[28px] p-[2px]">
-              <div
-                className="absolute inset-0 rounded-[20px] md:rounded-[24px] lg:rounded-[28px]"
-                style={{
-                  background:
-                    "radial-gradient(130% 130% at 50% 100%, rgba(255,120,40,0.95) 0%, rgba(255,120,40,0.6) 38%, rgba(255,80,20,0.28) 58%, transparent 72%)",
-                  filter: "blur(20px) md:blur(32px) lg:blur(42px)",
-                }}
-              />
+       <div className="relative rounded-[20px] md:rounded-[24px] lg:rounded-[28px] p-[2px]">
+
+  {/* PRIMARY GLOW */}
+  <div
+    className="
+      absolute inset-[-8%]
+      rounded-[28px]
+      bg-[radial-gradient(ellipse_at_bottom_right,rgba(255,120,40,0.85)_0%,rgba(255,120,40,0.45)_30%,rgba(255,90,20,0.25)_48%,transparent_65%)]
+      blur-[40px]
+      md:blur-[48px]
+      lg:blur-[56px]
+      opacity-90
+    "
+  />
+
+  {/* SOFT EDGE BOOST (very subtle) */}
+  <div
+    className="
+      absolute inset-[-4%]
+      rounded-[26px]
+      bg-[radial-gradient(ellipse_at_bottom_right,rgba(255,140,60,0.25)_0%,transparent_60%)]
+      blur-[22px]
+      opacity-60
+    "
+  />
+
 
               {/* MAIN FLOATING CARD */}
               <div className="relative rounded-[16px] md:rounded-[20px] lg:rounded-[24px] bg-black px-5 pt-6 pb-8 sm:px-7 sm:pt-8 sm:pb-10 md:px-10 md:pt-10 md:pb-12 lg:px-12 lg:pt-12 lg:pb-16">
@@ -29,7 +46,7 @@ export default function AboutSection() {
                       About ScaffoldGen CLI
                     </h3>
 
-                    <p className="mt-4 md:mt-5 max-w-full md:max-w-md text-sm md:text-[13.5px] lg:text-[14px] xl:text-[14.5px] leading-relaxed text-neutral-400">
+                    <p className="mt-4 md:mt-5 px-4 py-2 md:px-0 md:py-0 max-w-full md:max-w-md text-sm md:text-[13.5px] lg:text-[14px] xl:text-[14.5px] leading-relaxed text-neutral-400">
                       Our CLI tool is a powerful and versatile command-line interface that
                       helps developers streamline their workflow and boost productivity.
                       With a wide range of features and customization options, it's the
@@ -46,10 +63,10 @@ export default function AboutSection() {
                   </div>
 
                   {/* TERMINAL AREA */}
-                  <div className="relative lg:order-2">
+                  <div className="relative px-4 py-2 md:px-0 md:py-0 overflow-hidden lg:order-2">
 
                     {/* GREY DEPTH GLOW */}
-                    <div className="absolute -inset-x-3 -inset-y-3 sm:-inset-x-4 sm:-inset-y-4 md:-inset-x-5 md:-inset-y-5 lg:-inset-x-6 lg:-inset-y-6 rounded-xl md:rounded-2xl lg:rounded-3xl bg-gradient-to-b from-neutral-700/40 via-neutral-800/30 to-transparent blur-[16px] md:blur-[22px] lg:blur-[26px] xl:blur-[30px]" />
+                    <div className="absolute -inset-x-2 -inset-y-2 sm:-inset-x-3 sm:-inset-y-3 md:-inset-x-4 md:-inset-y-4 lg:-inset-x-5 lg:-inset-y-5 xl:-inset-x-6 xl:-inset-y-6 rounded-xl md:rounded-2xl lg:rounded-3xl bg-gradient-to-b from-neutral-700/40 via-neutral-800/30 to-transparent blur-[16px] md:blur-[22px] lg:blur-[26px] xl:blur-[30px]" />
 
                     {/* TERMINAL WRAPPER */}
                     <div className="relative overflow-x-auto">
@@ -68,10 +85,10 @@ export default function AboutSection() {
                         {/* BODY */}
                         <pre className="px-2 pt-2 pb-3 sm:px-3 sm:pt-3 sm:pb-4 md:px-4 md:pt-4 md:pb-5 lg:px-5 lg:pt-4 lg:pb-6 xl:px-6 xl:pt-5 xl:pb-8 text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs xl:text-[12.5px] leading-relaxed text-neutral-200 whitespace-pre overflow-x-auto">
 <span className="text-cyan-400">~</span><span className="text-green-400">&gt;</span> <span className="text-yellow-300">cd</span> <span className="text-white">web_development</span>{"\n"}
-<span className="text-cyan-400">~</span><span className="text-green-400">&gt;</span> <span className="text-yellow-300">scaffoldgen new</span> <span className="text-white">**my-awesome-app**</span> --template next-ts --style tailwind{"\n"}
-<span className="text-cyan-400">~</span><span className="text-green-400">&gt;</span> <span className="text-yellow-300">scaffoldgen generate</span> **component** UserProfile --type rfc{"\n"}
-<span className="text-cyan-400">~</span><span className="text-green-400">&gt;</span> <span className="text-yellow-300">scaffoldgen create</span> **route** auth --handler login,register{"\n"}
-<span className="text-cyan-400">~</span><span className="text-green-400">&gt;</span> <span className="text-yellow-300">scaffoldgen config set</span> **default-lang** python
+<span className="text-cyan-400">~</span><span className="text-green-400">&gt;</span> <span className="text-yellow-300">scaffoldgen new</span> <span className="text-yellow-300">**my-awesome-app**--template next-ts --style tailwind </span> {"\n"}
+<span className="text-cyan-400">~</span><span className="text-green-400">&gt;</span> <span className="text-yellow-300">scaffoldgen generate</span> <span className="text-yellow-300">**component** UserProfile --type rfc </span> {"\n"}
+<span className="text-cyan-400">~</span><span className="text-green-400">&gt;</span> <span className="text-yellow-300">scaffoldgen create</span> <span className="text-yellow-300">**route** auth --handler login,register </span> {"\n"}
+<span className="text-cyan-400">~</span><span className="text-green-400">&gt;</span> <span className="text-yellow-300">scaffoldgen config set</span> <span className="text-yellow-300">**default-lang** python </span> 
                         </pre>
 
                       </div>
