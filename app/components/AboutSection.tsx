@@ -186,7 +186,7 @@ export default function AboutSection() {
 
                     {/* TERMINAL WRAPPER */}
                     <div className="relative overflow-x-auto">
-                      <div className="min-w-[200px] sm:min-w-[240px] md:min-w-[280px] lg:min-w-[320px] xl:min-w-[380px] rounded-lg md:rounded-xl lg:rounded-2xl bg-neutral-950 shadow-[0_20px_60px_rgba(0,0,0,0.8)] md:shadow-[0_25px_70px_rgba(0,0,0,0.8)] lg:shadow-[0_30px_80px_rgba(0,0,0,0.8)]">
+                      <div className="min-w-full sm:min-w-[240px] md:min-w-[280px] lg:min-w-[320px] xl:min-w-[380px] rounded-lg md:rounded-xl lg:rounded-2xl bg-neutral-950 shadow-[0_20px_60px_rgba(0,0,0,0.8)] md:shadow-[0_25px_70px_rgba(0,0,0,0.8)] lg:shadow-[0_30px_80px_rgba(0,0,0,0.8)]">
 
                         {/* HEADER */}
                         <div className="flex items-center gap-2 rounded-t-lg md:rounded-t-xl lg:rounded-t-2xl bg-neutral-800 px-3 py-2.5 sm:px-3 sm:py-2.5 md:px-4 md:py-3 lg:px-5 lg:py-3">
@@ -199,7 +199,7 @@ export default function AboutSection() {
                         </div>
 
                         {/* BODY */}
-                        <pre className="px-3 pt-3 pb-4 sm:px-3 sm:pt-3 sm:pb-4 md:px-4 md:pt-4 md:pb-5 lg:px-5 lg:pt-4 lg:pb-6 xl:px-6 xl:pt-5 xl:pb-8 text-[10px] sm:text-[11px] md:text-[12px] lg:text-sm xl:text-[13px] leading-relaxed text-neutral-200 whitespace-pre overflow-x-auto">
+                        <pre className="px-3 pt-3 pb-4 sm:px-3 sm:pt-3 sm:pb-4 md:px-4 md:pt-4 md:pb-5 lg:px-5 lg:pt-4 lg:pb-6 xl:px-6 xl:pt-5 xl:pb-8 text-[10px] sm:text-[11px] md:text-[12px] lg:text-sm xl:text-[13px] leading-relaxed text-neutral-200 whitespace-pre-wrap overflow-x-auto break-words">
                           {renderText()}
                         </pre>
 

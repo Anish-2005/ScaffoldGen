@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image"
+import { Github, MessageCircle, Linkedin } from "lucide-react"
 import ComponentLoader from "./ComponentLoader"
 import AnimatedOnScroll from "./AnimatedOnScroll"
 
@@ -16,13 +17,16 @@ export default function Footer() {
 
               {/* ================= LEFT: LOGO ================= */}
               <div className="flex justify-center md:justify-start">
-                <div className="flex items-center gap-3">
+                <div 
+                  className="flex items-center gap-3 group cursor-pointer"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
                   <Image 
                     width={160}
                     height={32}
                     src="/logo.png"
                     alt="ScaffoldGen logo"
-                    className="h-8 sm:h-9 w-auto max-w-[160px]"
+                    className="h-8 sm:h-9 w-auto max-w-[160px] transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(255,120,40,0.4)]"
                   />
                 </div>
               </div>
@@ -34,10 +38,10 @@ export default function Footer() {
                 </h4>
 
                 <ul className="space-y-3 sm:space-y-4 text-sm sm:text-[15px] text-neutral-400">
-                  <li className="transition hover:text-white cursor-pointer">Downloads</li>
-                  <li className="transition hover:text-white cursor-pointer">Releases</li>
-                  <li className="transition hover:text-white cursor-pointer">Documentation</li>
-                  <li className="transition hover:text-white cursor-pointer">Support</li>
+                  <li className="transition-all duration-300 hover:text-orange-400 hover:translate-x-1 cursor-pointer">Downloads</li>
+                  <li className="transition-all duration-300 hover:text-orange-400 hover:translate-x-1 cursor-pointer">Releases</li>
+                  <li className="transition-all duration-300 hover:text-orange-400 hover:translate-x-1 cursor-pointer">Documentation</li>
+                  <li className="transition-all duration-300 hover:text-orange-400 hover:translate-x-1 cursor-pointer">Support</li>
                 </ul>
               </div>
 
@@ -48,16 +52,16 @@ export default function Footer() {
                 </h4>
 
                 <ul className="space-y-3 sm:space-y-4 text-sm sm:text-[15px] text-neutral-400">
-                  <li className="flex items-center justify-center md:justify-start gap-3 transition hover:text-white cursor-pointer">
-                    <span className="text-lg">in</span>
+                  <li className="flex items-center justify-center md:justify-start gap-3 transition-all duration-300 hover:text-orange-400 hover:translate-x-1 cursor-pointer group">
+                    <Linkedin className="w-5 h-5 transition-all duration-300 group-hover:scale-110 group-hover:text-blue-400" />
                     LinkedIn
                   </li>
-                  <li className="flex items-center justify-center md:justify-start gap-3 transition hover:text-white cursor-pointer">
-                    <span className="text-lg">⌂</span>
+                  <li className="flex items-center justify-center md:justify-start gap-3 transition-all duration-300 hover:text-orange-400 hover:translate-x-1 cursor-pointer group">
+                    <Github className="w-5 h-5 transition-all duration-300 group-hover:scale-110 group-hover:text-gray-300" />
                     GitHub
                   </li>
-                  <li className="flex items-center justify-center md:justify-start gap-3 transition hover:text-white cursor-pointer">
-                    <span className="text-lg">◌</span>
+                  <li className="flex items-center justify-center md:justify-start gap-3 transition-all duration-300 hover:text-orange-400 hover:translate-x-1 cursor-pointer group">
+                    <MessageCircle className="w-5 h-5 transition-all duration-300 group-hover:scale-110 group-hover:text-indigo-400" />
                     Discord
                   </li>
                 </ul>
@@ -66,7 +70,7 @@ export default function Footer() {
             </div>
 
             {/* ================= BOTTOM ================= */}
-            <div className="mt-16 sm:mt-20 text-center md:text-left text-xs sm:text-sm text-neutral-500">
+            <div className="mt-16 sm:mt-20 text-center md:text-left text-xs sm:text-sm text-neutral-500 transition-all duration-300 hover:text-neutral-400">
               © 2024 ScaffoldGenCLI. All rights reserved.
             </div>
           </div>

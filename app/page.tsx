@@ -14,7 +14,7 @@ import TestimonialsSection from './components/TestimonialsSection';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-950 to-black">
+    <div className="min-h-screen w-full bg-gradient-to-b from-black via-gray-950 to-black">
       <Navbar />
       <HeroSection />
       <AboutSection />
