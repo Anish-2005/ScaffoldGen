@@ -117,7 +117,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={satoshi.variable}>
-      <body className="font-sans antialiased bg-black text-white">
+      <body id="top" className="font-sans antialiased bg-black text-white">
         <LoadingOverlay />
         {children}
         <Analytics />

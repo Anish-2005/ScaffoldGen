@@ -14,13 +14,13 @@ export default function Navbar() {
         <nav className="sticky top-0 z-50 border-b border-neutral-800 bg-black/60 backdrop-blur">
           <div className="mx-auto flex h-16 max-w-7xl items-center px-4 sm:px-6 lg:px-8">
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <Image
                 width={160}
                 height={32}
                 src="/logo.png"
                 alt="ScaffoldGen logo"
-                className="h-8 w-40 object-contain"
+                className="h-8 w-40 object-contain transition-all duration-300 hover:scale-105"
               />
             </div>
 

@@ -173,10 +173,10 @@ export default function AboutSection() {
                   </div>
 
                   {/* TERMINAL AREA */}
-                  <div className="relative px-4 py-2 md:px-0 md:py-0 overflow-hidden lg:order-2">
+                  <div className="relative px-4 py-2 md:px-0 md:py-0 overflow-hidden lg:order-2 w-full max-w-full">
                     <div className="absolute -inset-x-2 -inset-y-2 sm:-inset-x-3 sm:-inset-y-3 md:-inset-x-4 md:-inset-y-4 lg:-inset-x-5 lg:-inset-y-5 xl:-inset-x-6 xl:-inset-y-6 rounded-xl md:rounded-2xl lg:rounded-3xl bg-gradient-to-b from-neutral-700/40 via-neutral-800/30 to-transparent blur-[16px] md:blur-[22px] lg:blur-[26px] xl:blur-[30px]" />
-                    <div className="relative overflow-x-auto">
-                      <div className="min-w-full sm:min-w-[240px] md:min-w-[280px] lg:min-w-[320px] xl:min-w-[380px] rounded-lg md:rounded-xl lg:rounded-2xl bg-neutral-950 shadow-[0_20px_60px_rgba(0,0,0,0.8)] md:shadow-[0_25px_70px_rgba(0,0,0,0.8)] lg:shadow-[0_30px_80px_rgba(0,0,0,0.8)]">
+                    <div className="relative overflow-x-auto w-full max-w-full">
+                      <div className="w-full max-w-full sm:min-w-[240px] md:min-w-[280px] lg:min-w-[320px] xl:min-w-[380px] rounded-lg md:rounded-xl lg:rounded-2xl bg-neutral-950 shadow-[0_20px_60px_rgba(0,0,0,0.8)] md:shadow-[0_25px_70px_rgba(0,0,0,0.8)] lg:shadow-[0_30px_80px_rgba(0,0,0,0.8)]">
                         <div className="flex items-center gap-2 rounded-t-lg md:rounded-t-xl lg:rounded-t-2xl bg-neutral-800 px-3 py-2.5 sm:px-3 sm:py-2.5 md:px-4 md:py-3 lg:px-5 lg:py-3">
                           <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 rounded-full bg-red-500" />
                           <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 rounded-full bg-yellow-400" />
@@ -185,7 +185,7 @@ export default function AboutSection() {
                             scaffoldgen
                           </span>
                         </div>
-                        <pre className="px-3 pt-3 pb-4 sm:px-3 sm:pt-3 sm:pb-4 md:px-4 md:pt-4 md:pb-5 lg:px-5 lg:pt-4 lg:pb-6 xl:px-6 xl:pt-5 xl:pb-8 text-[10px] sm:text-[11px] md:text-[12px] lg:text-sm xl:text-[13px] leading-relaxed text-neutral-200 whitespace-pre-wrap overflow-x-auto break-words">
+                        <pre className="px-3 pt-3 pb-4 sm:px-3 sm:pt-3 sm:pb-4 md:px-4 md:pt-4 md:pb-5 lg:px-5 lg:pt-4 lg:pb-6 xl:px-6 xl:pt-5 xl:pb-8 text-[10px] sm:text-[11px] md:text-[12px] lg:text-sm xl:text-[13px] leading-relaxed text-neutral-200 whitespace-pre-line break-all overflow-x-auto max-w-full">
                           {renderText()}
                         </pre>
                       </div>

@@ -6,17 +6,22 @@ import AnimatedOnScroll from "./AnimatedOnScroll"
 
 export default function Footer() {
   return (
-    <ComponentLoader variant="Footer">
-      <AnimatedOnScroll variant="fadeUp">
-        <footer className="relative bg-black pt-16 sm:pt-20 lg:pt-24 pb-10">
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-20 sm:h-24 bg-gradient-to-b from-neutral-900/40 to-transparent" />
+    <footer className="relative bg-black pt-16 sm:pt-20 lg:pt-24 pb-10">
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-20 sm:h-24 bg-gradient-to-b from-neutral-900/40 to-transparent" /> 
 
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
             <div className="grid grid-cols-1 gap-12 sm:gap-16 md:grid-cols-3">
               <div className="flex justify-center md:justify-start">
-                <div 
-                  className="flex items-center gap-3 group cursor-pointer"
-                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                <button 
+                  type="button"
+                  className="flex items-center gap-3 group cursor-pointer pointer-events-auto relative z-10 bg-transparent border-0 p-0"
+                  onClick={() => {
+                    window.scrollTo({
+                      top: 0,
+                      left: 0,
+                      behavior: 'smooth'
+                    });
+                  }}
                 >
                   <Image 
                     width={160}
@@ -25,7 +30,7 @@ export default function Footer() {
                     alt="ScaffoldGen logo"
                     className="h-8 sm:h-9 w-auto max-w-[160px] transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_8px_rgba(255,120,40,0.4)]"
                   />
-                </div>
+                </button>
               </div>
 
               <div className="text-center md:text-left">
@@ -69,7 +74,5 @@ export default function Footer() {
             </div>
           </div>
         </footer>
-      </AnimatedOnScroll>
-    </ComponentLoader>
   )
 }
