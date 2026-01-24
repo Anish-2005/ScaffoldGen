@@ -1,9 +1,9 @@
 "use client"
 
-import { motion, useReducedMotion } from "framer-motion"
+import { motion, useReducedMotion, Variants } from "framer-motion"
 import React from "react"
 
-const variants: Record<string, any> = {
+const variants: Record<string, Variants> = {
   fadeUp: {
     hidden: { opacity: 0, y: 18 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.64, ease: [0.22, 1, 0.36, 1] } },

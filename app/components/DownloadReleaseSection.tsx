@@ -12,7 +12,6 @@ export default function DownloadReleaseSection() {
 
             <div className="grid gap-12 sm:gap-16 md:gap-20 md:grid-cols-2 place-content-center mx-auto">
 
-              {/* ================= LATEST DOWNLOAD ================= */}
               <div className="md:ml-[10px] text-center md:text-left">
                 <h3 className="text-xl sm:text-2xl font-bold text-white">
                   Latest Download
@@ -33,7 +32,6 @@ export default function DownloadReleaseSection() {
                 </button>
               </div>
 
-              {/* ================= LATEST RELEASE ================= */}
               <div className="md:ml-[10px] text-center md:text-left">
                 <h3 className="text-xl sm:text-2xl font-extrabold text-white">
                   Latest Release

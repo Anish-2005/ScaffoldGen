@@ -11,12 +11,10 @@ export default function OrganizationSection() {
         <section className="bg-black pt-20 sm:pt-24 lg:pt-32">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 text-center">
 
-            {/* ================= HEADING ================= */}
             <h2 className="mb-10 sm:mb-14 lg:mb-16 text-3xl sm:text-4xl font-semibold text-white">
               Organizations
             </h2>
 
-            {/* ================= CARD ================= */}
             <div className="flex justify-center">
               <div
                 className="
@@ -35,20 +33,14 @@ export default function OrganizationSection() {
                   hover:shadow-[0_25px_60px_rgba(255,120,40,0.3),0_0_40px_rgba(255,120,40,0.15)]
                 "
               >
-                {/* Soft inner shading */}
                 <div className="pointer-events-none absolute inset-0 rounded-2xl bg-black/40" />
-
-                {/* Hover glow */}
                 <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 shadow-[inset_0_0_50px_rgba(255,120,40,0.25)]" />
-
-                {/* Content */}
                 <div className="relative flex h-full flex-col items-center justify-center gap-4">
-                  {/* Icon */}
                   <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg border border-white/20 transition-all duration-300 group-hover:scale-110 group-hover:border-yellow-400/50 group-hover:shadow-[0_0_15px_rgba(255,120,40,0.5)]">
-                    <Image className="h-4 w-4 sm:h-5 sm:w-5 text-white/70 transition-all duration-300 group-hover:text-yellow-300" />
+                    {/* eslint-disable-next-line jsx-a11y/alt-text */}
+                    <Image className="h-4 w-4 sm:h-5 sm:w-5 text-white/70 transition-all duration-300 group-hover:text-yellow-300" aria-hidden="true" />
                   </div>
 
-                  {/* Text */}
                   <span className="text-base sm:text-lg font-medium text-white transition-all duration-300 group-hover:text-yellow-200 group-hover:drop-shadow-[0_0_8px_rgba(255,120,40,0.6)]">
                     Resourcio Community
                   </span>

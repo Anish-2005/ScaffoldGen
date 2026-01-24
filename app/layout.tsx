@@ -5,7 +5,6 @@ import { Analytics } from "@vercel/analytics/next"
 import LoadingOverlay from "./components/LoadingOverlay"
 import "./globals.css"
 
-/* Satoshi Font (public/fonts, no semibold) */
 const satoshi = localFont({
   src: [
     {
@@ -49,7 +48,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://scaffoldgen.dev"), // Replace with your actual domain
+  metadataBase: new URL("https://scaffoldgen-zeta.vercel.app/"),
   alternates: {
     canonical: "/",
   },
@@ -57,11 +56,11 @@ export const metadata: Metadata = {
     title: "ScaffoldGen - Powerful CLI for Modern Development",
     description:
       "A powerful command-line interface that connects interface builders and empowers you to create seamless workflows and boost your productivity.",
-    url: "https://scaffoldgen.dev",
+    url: "https://scaffoldgen-zeta.vercel.app/",
     siteName: "ScaffoldGen",
     images: [
       {
-        url: "/og-image.png", // Add an OG image to public/
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "ScaffoldGen CLI Tool",
@@ -75,8 +74,7 @@ export const metadata: Metadata = {
     title: "ScaffoldGen - Powerful CLI for Modern Development",
     description:
       "A powerful command-line interface that connects interface builders and empowers you to create seamless workflows and boost your productivity.",
-    images: ["/og-image.png"], // Same OG image
-    creator: "@scaffoldgen", // Replace with your Twitter handle
+    images: ["/logo.png"],
   },
   robots: {
     index: true,
@@ -89,7 +87,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  generator: "v0.app",
   icons: {
     icon: [
       {

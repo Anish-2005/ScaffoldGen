@@ -14,7 +14,6 @@ export default function Navbar() {
         <nav className="sticky top-0 z-50 border-b border-neutral-800 bg-black/60 backdrop-blur">
           <div className="mx-auto flex h-16 max-w-7xl items-center px-4 sm:px-6 lg:px-8">
 
-            {/* LEFT — LOGO */}
             <div className="flex items-center gap-2">
               <Image
                 width={160}
@@ -25,7 +24,6 @@ export default function Navbar() {
               />
             </div>
 
-            {/* SPACER */}
             <div className="flex-1" />
 
             {/* DESKTOP NAV */}

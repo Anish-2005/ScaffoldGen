@@ -12,8 +12,6 @@ export default function FeaturesSection() {
             <AnimatedOnScroll variant="fadeIn">
                 <section className="relative bg-black py-20 lg:py-36 overflow-hidden">
                     <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6">
-
-                        {/* ================= CENTER HUB (DESKTOP ONLY) ================= */}
                         <div className="absolute left-1/2 top-1/2 z-30 -translate-x-1/2 -translate-y-1/2 hidden lg:block">
                             <motion.div
                                 className="absolute inset-[-42px] z-10"
@@ -53,11 +51,9 @@ export default function FeaturesSection() {
                             </div>
                         </div>
 
-                        {/* ================= SEPARATOR LINES (DESKTOP ONLY) ================= */}
                         <div className="pointer-events-none absolute left-1/2 top-0 h-full w-px bg-gradient-to-b from-transparent via-orange-500/30 to-transparent hidden lg:block" />
                         <div className="pointer-events-none absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange-500/30 to-transparent hidden lg:block" />
 
-                        {/* ================= GRID ================= */}
                         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0">
                             <Quadrant
                                 gradient="bg-gradient-to-r from-black via-black to-orange-900/30"
@@ -98,7 +94,6 @@ export default function FeaturesSection() {
     )
 }
 
-/* ================= QUADRANT ================= */
 
 function Quadrant({
     gradient,

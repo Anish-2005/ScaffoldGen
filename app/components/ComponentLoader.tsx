@@ -12,19 +12,16 @@ export default function ComponentLoader({
   const [show, setShow] = useState(false)
 
   useEffect(() => {
-    // small stagger to allow skeleton to show briefly on mount/route change
     const t = setTimeout(() => setShow(true), 220)
     return () => clearTimeout(t)
   }, [])
 
-  // If still waiting, render skeleton for the variant
   if (!show) return <Skeleton variant={variant} />
 
   return <>{children}</>
 }
 
 function Skeleton({ variant }: { variant: string }) {
-  // minimal, professional skeletons per component type
   switch (variant) {
     case "HeroSection":
       return (

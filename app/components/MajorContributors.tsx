@@ -1,6 +1,7 @@
 "use client"
 
 import { ImageIcon } from "lucide-react"
+import Image from "next/image"
 import ComponentLoader from "./ComponentLoader"
 import AnimatedOnScroll from "./AnimatedOnScroll"
 
@@ -18,12 +19,10 @@ export default function MajorContributors() {
         <section className="relative bg-black py-20 lg:py-28">
           <div className="mx-auto max-w-[1280px] px-4 sm:px-6">
 
-            {/* ================= HEADING ================= */}
             <h2 className="mb-10 lg:mb-14 text-center text-3xl sm:text-4xl font-medium text-white">
               Major Contributors
             </h2>
 
-            {/* ================= CARDS GRID ================= */}
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {contributors.map((c, i) => (
                 <div
@@ -47,13 +46,10 @@ export default function MajorContributors() {
                     flex-col
                   "
                 >
-                  {/* Subtle inner sheen */}
                   <div className="pointer-events-none absolute inset-0 rounded-lg bg-gradient-to-b from-white/5 via-transparent to-black/40" />
 
-                  {/* Content */}
                   <div className="relative z-10 flex h-full flex-col items-center">
 
-                    {/* Avatar */}
                     <div
                       className="
                         mt-4 sm:mt-6
@@ -76,9 +72,11 @@ export default function MajorContributors() {
                       "
                     >
                       {c.image ? (
-                        <img
+                        <Image
                           src={c.image}
                           alt={c.name}
+                          width={100}
+                          height={100}
                           className="h-full w-full rounded-md object-cover"
                         />
                       ) : (
@@ -86,7 +84,6 @@ export default function MajorContributors() {
                       )}
                     </div>
 
-                    {/* Name + Role pinned to bottom */}
                     <div className="mt-auto pb-2 text-center">
                       <p className="text-base sm:text-lg font-medium text-white leading-tight transition-all duration-300 group-hover:text-orange-200 group-hover:drop-shadow-[0_0_6px_rgba(255,165,0,0.4)]">
                         {c.name}
@@ -97,7 +94,6 @@ export default function MajorContributors() {
                     </div>
                   </div>
 
-                  {/* Hover glow (safe on mobile) */}
                   <div
                     className="
                       pointer-events-none

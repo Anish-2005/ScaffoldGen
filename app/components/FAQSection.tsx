@@ -14,7 +14,6 @@ interface FAQSectionProps {
 }
 
 export default function FAQSection({ questions }: FAQSectionProps) {
-  // Sample answers for each question
   const faqData: FAQItem[] = questions.map((q, i) => ({
     question: q,
     answer: getSampleAnswer(i)
@@ -31,13 +30,9 @@ export default function FAQSection({ questions }: FAQSectionProps) {
       <AnimatedOnScroll variant="fadeUp">
         <section className="bg-black py-20 sm:py-24 lg:py-32">
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
-
-            {/* ================= HEADING ================= */}
             <h2 className="mb-10 sm:mb-14 lg:mb-16 text-center text-3xl sm:text-4xl font-semibold text-white">
               FAQ
             </h2>
-
-            {/* ================= GRID ================= */}
             <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
               {faqData.map((faq, i) => (
                 <div
@@ -63,7 +58,6 @@ export default function FAQSection({ questions }: FAQSectionProps) {
                   "
                   onClick={() => toggleFAQ(i)}
                 >
-                  {/* Inner subtle highlight */}
                   <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-white/5 transition-all duration-300 group-hover:ring-orange-400/10" />
 
                   <div className="flex items-start justify-between gap-4">
@@ -71,7 +65,6 @@ export default function FAQSection({ questions }: FAQSectionProps) {
                       {faq.question}
                     </span>
 
-                    {/* Chevron */}
                     <svg
                       className={`h-4 w-4 sm:h-5 sm:w-5 text-white/70 flex-shrink-0 mt-1 transition-all duration-300 ${
                         openIndex === i ? 'rotate-180 text-orange-400' : 'group-hover:text-orange-300'
@@ -89,7 +82,6 @@ export default function FAQSection({ questions }: FAQSectionProps) {
                     </svg>
                   </div>
 
-                  {/* Answer */}
                   <div
                     className={`overflow-hidden transition-all duration-500 ease-in-out ${
                       openIndex === i ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'
@@ -109,7 +101,6 @@ export default function FAQSection({ questions }: FAQSectionProps) {
   )
 }
 
-// Sample answers for FAQs
 function getSampleAnswer(index: number): string {
   const answers = [
     "ScaffoldGen CLI is a powerful command-line tool designed to streamline your development workflow. It helps developers quickly scaffold projects, generate components, and manage configurations with ease.",

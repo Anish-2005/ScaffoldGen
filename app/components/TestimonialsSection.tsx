@@ -2,6 +2,7 @@
 
 import ComponentLoader from "./ComponentLoader"
 import AnimatedOnScroll from "./AnimatedOnScroll"
+import Image from "next/image"
 
 interface Testimonial {
   quote: string
@@ -96,17 +97,17 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
                     </svg>
                   </div>
 
-                  {/* QUOTE */}
                   <blockquote className="relative z-10 text-sm sm:text-base text-neutral-200 leading-relaxed mb-6 transition-all duration-300 group-hover:text-white/90 group-hover:drop-shadow-[0_0_4px_rgba(255,255,255,0.1)]">
-                    "{testimonial.quote}"
+                    &ldquo;{testimonial.quote}&rdquo;
                   </blockquote>
 
-                  {/* AUTHOR */}
                   <div className="relative z-10 flex items-center gap-3">
                     {testimonial.avatar ? (
-                      <img
+                      <Image
                         src={testimonial.avatar}
                         alt={testimonial.name}
+                        width={40}
+                        height={40}
                         className="w-10 h-10 rounded-full ring-2 ring-orange-400/30 transition-all duration-300 group-hover:scale-110 group-hover:ring-orange-400/60 group-hover:shadow-[0_0_15px_rgba(255,120,40,0.4)]"
                       />
                     ) : (

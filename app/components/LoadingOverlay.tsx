@@ -8,22 +8,21 @@ export default function LoadingOverlay() {
   const pathname = usePathname()
   const [loading, setLoading] = useState(true)
 
-  // Hide after window load or short fallback
   useEffect(() => {
     const onLoad = () => setTimeout(() => setLoading(false), 260)
     if (typeof window === "undefined") return
+
     if (document.readyState === "complete") {
-      setLoading(false)
+      setTimeout(() => setLoading(false), 0)
       return
     }
     window.addEventListener("load", onLoad)
     return () => window.removeEventListener("load", onLoad)
   }, [])
 
-  // Show briefly on route change for a smooth transition
   useEffect(() => {
     if (!pathname) return
-    setLoading(true)
+    setTimeout(() => setLoading(true), 0)
     const t = setTimeout(() => setLoading(false), 380)
     return () => clearTimeout(t)
   }, [pathname])

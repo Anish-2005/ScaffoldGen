@@ -2,67 +2,67 @@ import ComponentLoader from "./ComponentLoader"
 import AnimatedOnScroll from "./AnimatedOnScroll"
 import { useState, useEffect } from 'react'
 
+const lines = [
+  {
+    text: "~> cd web_development\n",
+    colors: [
+      { start: 0, end: 1, class: 'text-cyan-400' },
+      { start: 1, end: 2, class: 'text-green-400' },
+      { start: 3, end: 5, class: 'text-yellow-300' },
+      { start: 5, end: 21, class: '' },
+    ],
+  },
+  {
+    text: "~> scaffoldgen new **my-awesome-app** --template next-ts --style tailwind\n",
+    colors: [
+      { start: 0, end: 1, class: 'text-cyan-400' },
+      { start: 1, end: 2, class: 'text-green-400' },
+      { start: 3, end: 13, class: 'text-yellow-300' },
+      { start: 13, end: 30, class: 'text-yellow-300' },
+      { start: 30, end: 65, class: '' },
+    ],
+  },
+  {
+    text: "~> scaffoldgen generate **component** UserProfile --type rfc\n",
+    colors: [
+      { start: 0, end: 1, class: 'text-cyan-400' },
+      { start: 1, end: 2, class: 'text-green-400' },
+      { start: 3, end: 23, class: 'text-yellow-300' },
+      { start: 23, end: 34, class: 'text-yellow-300' },
+      { start: 34, end: 54, class: '' },
+    ],
+  },
+  {
+    text: "~> scaffoldgen create **route** auth --handler login,register\n",
+    colors: [
+      { start: 0, end: 1, class: 'text-cyan-400' },
+      { start: 1, end: 2, class: 'text-green-400' },
+      { start: 3, end: 20, class: 'text-yellow-300' },
+      { start: 20, end: 27, class: 'text-yellow-300' },
+      { start: 27, end: 58, class: '' },
+    ],
+  },
+  {
+    text: "~> scaffoldgen config set **default-lang** python",
+    colors: [
+      { start: 0, end: 1, class: 'text-cyan-400' },
+      { start: 1, end: 2, class: 'text-green-400' },
+      { start: 3, end: 23, class: 'text-yellow-300' },
+      { start: 23, end: 38, class: 'text-yellow-300' },
+      { start: 38, end: 44, class: '' },
+    ],
+  },
+]
+
 export default function AboutSection() {
   const [currentLine, setCurrentLine] = useState(0)
   const [currentChar, setCurrentChar] = useState(0)
   const [paused, setPaused] = useState(false)
 
-  const lines = [
-    {
-      text: "~> cd web_development\n",
-      colors: [
-        { start: 0, end: 1, class: 'text-cyan-400' },
-        { start: 1, end: 2, class: 'text-green-400' },
-        { start: 3, end: 5, class: 'text-yellow-300' },
-        { start: 5, end: 21, class: '' },
-      ],
-    },
-    {
-      text: "~> scaffoldgen new **my-awesome-app** --template next-ts --style tailwind\n",
-      colors: [
-        { start: 0, end: 1, class: 'text-cyan-400' },
-        { start: 1, end: 2, class: 'text-green-400' },
-        { start: 3, end: 13, class: 'text-yellow-300' },
-        { start: 13, end: 30, class: 'text-yellow-300' },
-        { start: 30, end: 65, class: '' },
-      ],
-    },
-    {
-      text: "~> scaffoldgen generate **component** UserProfile --type rfc\n",
-      colors: [
-        { start: 0, end: 1, class: 'text-cyan-400' },
-        { start: 1, end: 2, class: 'text-green-400' },
-        { start: 3, end: 23, class: 'text-yellow-300' },
-        { start: 23, end: 34, class: 'text-yellow-300' },
-        { start: 34, end: 54, class: '' },
-      ],
-    },
-    {
-      text: "~> scaffoldgen create **route** auth --handler login,register\n",
-      colors: [
-        { start: 0, end: 1, class: 'text-cyan-400' },
-        { start: 1, end: 2, class: 'text-green-400' },
-        { start: 3, end: 20, class: 'text-yellow-300' },
-        { start: 20, end: 27, class: 'text-yellow-300' },
-        { start: 27, end: 58, class: '' },
-      ],
-    },
-    {
-      text: "~> scaffoldgen config set **default-lang** python",
-      colors: [
-        { start: 0, end: 1, class: 'text-cyan-400' },
-        { start: 1, end: 2, class: 'text-green-400' },
-        { start: 3, end: 23, class: 'text-yellow-300' },
-        { start: 23, end: 38, class: 'text-yellow-300' },
-        { start: 38, end: 44, class: '' },
-      ],
-    },
-  ]
-
   const renderColoredText = (text: string, colors: { start: number; end: number; class: string }[], keyPrefix: string) => {
-    let result: JSX.Element[] = []
+    const result: JSX.Element[] = []
     let lastEnd = 0
-    for (let color of colors) {
+    for (const color of colors) {
       if (color.start >= text.length) continue
       if (lastEnd < color.start) {
         result.push(<span key={`${keyPrefix}-${lastEnd}`}>{text.substring(lastEnd, color.start)}</span>)
@@ -77,7 +77,7 @@ export default function AboutSection() {
   }
 
   const renderText = () => {
-    let elements: JSX.Element[] = []
+    const elements: JSX.Element[] = []
     for (let i = 0; i <= currentLine; i++) {
       const line = lines[i]
       const textToRender = i === currentLine ? line.text.substring(0, currentChar) : line.text
@@ -112,7 +112,7 @@ export default function AboutSection() {
     }, 50) // Adjust speed
 
     return () => clearInterval(interval)
-  }, [currentLine, lines, paused])
+  }, [currentLine, paused])
 
   return (
     <ComponentLoader variant="AboutSection">
@@ -120,10 +120,8 @@ export default function AboutSection() {
         <section className="relative z-30 -mt-[80px] sm:-mt-[140px] md:-mt-[180px] lg:-mt-[280px] pb-20 md:pb-28 lg:pb-44">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-            {/* ORANGE GLOW SHELL */}
             <div className="relative rounded-[20px] md:rounded-[24px] lg:rounded-[28px] p-[2px]">
 
-              {/* PRIMARY GLOW - BOTTOM */}
               <div
                 className="
       absolute inset-[-8%]
@@ -136,7 +134,6 @@ export default function AboutSection() {
     "
               />
 
-              {/* SOFT EDGE BOOST - RIGHT */}
               <div
                 className="
       absolute inset-[-4%]
@@ -148,11 +145,9 @@ export default function AboutSection() {
               />
 
 
-              {/* MAIN FLOATING CARD */}
               <div className="relative rounded-[16px] md:rounded-[20px] lg:rounded-[24px] bg-black px-5 pt-6 pb-8 sm:px-7 sm:pt-8 sm:pb-10 md:px-10 md:pt-10 md:pb-12 lg:px-12 lg:pt-12 lg:pb-16">
                 <div className="grid gap-8 md:gap-10 lg:gap-12 lg:grid-cols-2">
 
-                  {/* LEFT CONTENT */}
                   <div className="lg:order-1">
                     <h3 className="text-lg md:text-[19px] lg:text-[20px] xl:text-[22px] font-medium text-white">
                       About ScaffoldGen CLI
@@ -161,7 +156,7 @@ export default function AboutSection() {
                     <p className="mt-4 md:mt-5 px-4 py-2 md:px-0 md:py-0 max-w-full md:max-w-md text-sm md:text-[13.5px] lg:text-[14px] xl:text-[14.5px] leading-relaxed text-neutral-400">
                       Our CLI tool is a powerful and versatile command-line interface that
                       helps developers streamline their workflow and boost productivity.
-                      With a wide range of features and customization options, it's the
+                      With a wide range of features and customization options, it&apos;s the
                       perfect tool for any developer looking to optimize their development
                       process.
                     </p>
@@ -174,21 +169,14 @@ export default function AboutSection() {
                       <span className="relative z-10 group-hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.7)] transition-all duration-300">Learn More</span>
                     </button>
 
-                    {/* spacing preserved for desktop */}
                     <div className="hidden lg:block h-10" />
                   </div>
 
                   {/* TERMINAL AREA */}
                   <div className="relative px-4 py-2 md:px-0 md:py-0 overflow-hidden lg:order-2">
-
-                    {/* GREY DEPTH GLOW */}
                     <div className="absolute -inset-x-2 -inset-y-2 sm:-inset-x-3 sm:-inset-y-3 md:-inset-x-4 md:-inset-y-4 lg:-inset-x-5 lg:-inset-y-5 xl:-inset-x-6 xl:-inset-y-6 rounded-xl md:rounded-2xl lg:rounded-3xl bg-gradient-to-b from-neutral-700/40 via-neutral-800/30 to-transparent blur-[16px] md:blur-[22px] lg:blur-[26px] xl:blur-[30px]" />
-
-                    {/* TERMINAL WRAPPER */}
                     <div className="relative overflow-x-auto">
                       <div className="min-w-full sm:min-w-[240px] md:min-w-[280px] lg:min-w-[320px] xl:min-w-[380px] rounded-lg md:rounded-xl lg:rounded-2xl bg-neutral-950 shadow-[0_20px_60px_rgba(0,0,0,0.8)] md:shadow-[0_25px_70px_rgba(0,0,0,0.8)] lg:shadow-[0_30px_80px_rgba(0,0,0,0.8)]">
-
-                        {/* HEADER */}
                         <div className="flex items-center gap-2 rounded-t-lg md:rounded-t-xl lg:rounded-t-2xl bg-neutral-800 px-3 py-2.5 sm:px-3 sm:py-2.5 md:px-4 md:py-3 lg:px-5 lg:py-3">
                           <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 rounded-full bg-red-500" />
                           <span className="h-2.5 w-2.5 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5 rounded-full bg-yellow-400" />
@@ -197,16 +185,12 @@ export default function AboutSection() {
                             scaffoldgen
                           </span>
                         </div>
-
-                        {/* BODY */}
                         <pre className="px-3 pt-3 pb-4 sm:px-3 sm:pt-3 sm:pb-4 md:px-4 md:pt-4 md:pb-5 lg:px-5 lg:pt-4 lg:pb-6 xl:px-6 xl:pt-5 xl:pb-8 text-[10px] sm:text-[11px] md:text-[12px] lg:text-sm xl:text-[13px] leading-relaxed text-neutral-200 whitespace-pre-wrap overflow-x-auto break-words">
                           {renderText()}
                         </pre>
-
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>

@@ -9,13 +9,10 @@ export default function Footer() {
     <ComponentLoader variant="Footer">
       <AnimatedOnScroll variant="fadeUp">
         <footer className="relative bg-black pt-16 sm:pt-20 lg:pt-24 pb-10">
-          {/* subtle top fade */}
           <div className="pointer-events-none absolute inset-x-0 top-0 h-20 sm:h-24 bg-gradient-to-b from-neutral-900/40 to-transparent" />
 
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
             <div className="grid grid-cols-1 gap-12 sm:gap-16 md:grid-cols-3">
-
-              {/* ================= LEFT: LOGO ================= */}
               <div className="flex justify-center md:justify-start">
                 <div 
                   className="flex items-center gap-3 group cursor-pointer"
@@ -31,7 +28,6 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* ================= MIDDLE: QUICK LINKS ================= */}
               <div className="text-center md:text-left">
                 <h4 className="mb-5 text-base sm:text-lg font-medium text-white">
                   Quick Links
@@ -45,7 +41,6 @@ export default function Footer() {
                 </ul>
               </div>
 
-              {/* ================= RIGHT: SOCIAL ================= */}
               <div className="text-center md:text-left">
                 <h4 className="mb-5 text-base sm:text-lg font-medium text-white">
                   Connect with Us
@@ -69,7 +64,6 @@ export default function Footer() {
 
             </div>
 
-            {/* ================= BOTTOM ================= */}
             <div className="mt-16 sm:mt-20 text-center md:text-left text-xs sm:text-sm text-neutral-500 transition-all duration-300 hover:text-neutral-400">
               © 2024 ScaffoldGenCLI. All rights reserved.
             </div>

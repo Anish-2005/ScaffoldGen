@@ -2,11 +2,10 @@
 
 import { motion, animate, useMotionValue } from "framer-motion"
 import { useEffect, useState } from "react"
-import { Wifi, Battery, TowerControl, Signal, Box } from "lucide-react"
+import { Wifi, Battery, Signal, Box } from "lucide-react"
 import ComponentLoader from "./ComponentLoader"
 import AnimatedOnScroll from "./AnimatedOnScroll"
 
-/* ---------------- COUNT UP ---------------- */
 function CountUp({ value }: { value: number }) {
   const mv = useMotionValue(0)
   const [v, setV] = useState(0)
@@ -23,8 +22,12 @@ function CountUp({ value }: { value: number }) {
   return <span>{v}</span>
 }
 
-/* ---------------- DATA ---------------- */
-const phones = [
+interface PhoneData {
+  value: number
+  label: string
+}
+
+const phones: PhoneData[] = [
   { value: 15, label: "Active Users" },
   { value: 10, label: "Active Projects" },
   { value: 25, label: "Total Shipment" },
@@ -34,13 +37,13 @@ const phones = [
 
 const X_POSITIONS = [-450, -225, 0, 225, 450]
 
-/* ---------------- PHONE ---------------- */
+/* PHONE */
 function Phone({
   phone,
   index,
   active,
 }: {
-  phone: any
+  phone: PhoneData
   index: number
   active: number
 }) {
@@ -69,7 +72,6 @@ function Phone({
         ${isActive ? 'border-4 border-black' : ''}
       `}
     >
-      {/* STATUS BAR */}
       <div className="absolute top-2 left-0 right-0 px-4 text-xs text-white/70 flex justify-between">
         <span>9:41</span>
         <div className="flex gap-1">
@@ -79,10 +81,8 @@ function Phone({
         </div>
       </div>
 
-      {/* NOTCH */}
-      <div className="absolute top-3 left-1/2 -translate-x-1/2 h-4 w-28 rounded-full bg-black" />
+      <div className="absolute top-1.5 left-1/2 -translate-x-1/2 h-4 w-20 rounded-full bg-black" />
 
-      {/* CONTENT */}
       <div className="absolute inset-x-3 top-40 rounded-2xl bg-transparent border border-white/30 p-3 shadow-lg">
         {/* ICON */}
         <div className="flex justify-start mb-3">
@@ -101,19 +101,16 @@ function Phone({
             viewBox="0 0 120 40"
             fill="none"
           >
-            {/* Area fill */}
             <path
               d="M3 30 L26 18 L47 24 L70 12 L91 16 L117 4 L117 40 L3 40 Z"
               fill="url(#phoneBlueGradient)"
             />
-            {/* Line */}
             <path
               d="M3 30 L26 18 L47 24 L70 12 L91 16 L117 4"
               stroke="#3B82F6"
               strokeWidth="2"
               fill="none"
             />
-            {/* Gradient definition */}
             <defs>
               <linearGradient id="phoneBlueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                 <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.4" />
@@ -155,28 +152,22 @@ function FloatingStatCard({
         shadow-[0_20px_60px_rgba(0,0,0,0.35)]
       "
     >
-      {/* TOP ROW */}
       <div className="flex items-start justify-between mb-3">
-        {/* ICON */}
         <div className="h-7 w-7 rounded-full bg-orange-100 flex items-center justify-center">
           <Box className="h-4 w-4 text-orange-500" />
         </div>
 
-        {/* MINI CHART */}
         <svg width="46" height="20" viewBox="0 0 46 20" fill="none">
-          {/* Area fill */}
           <path
             d="M1 15 L10 9 L18 12 L27 6 L35 8 L45 2 L45 20 L1 20 Z"
             fill={`url(#${gradientId})`}
           />
-          {/* Line */}
           <path
             d="M1 15 L10 9 L18 12 L27 6 L35 8 L45 2"
             stroke={chartColor}
             strokeWidth="2"
             fill="none"
           />
-          {/* Gradient definition */}
           <defs>
             <linearGradient id={gradientId} x1="0%" y1="0%" x2="0%" y2="100%">
               <stop offset="0%" stopColor={chartColor} stopOpacity="0.4" />
@@ -186,12 +177,10 @@ function FloatingStatCard({
         </svg>
       </div>
 
-      {/* VALUE */}
       <div className="text-3xl font-semibold text-black leading-tight">
         <CountUp value={value} />K
       </div>
 
-      {/* LABEL WITH PERCENT */}
       <div className="flex items-center gap-2 mt-1">
         <p className="text-xs text-neutral-500">{label}</p>
         <div className="inline-flex items-center gap-1 rounded-full bg-green-100 px-2 py-0.5">
@@ -204,7 +193,6 @@ function FloatingStatCard({
   )
 }
 
-/* ---------------- SECTION ---------------- */
 export default function GlobalUsersSection() {
   const [active, setActive] = useState(2)
 
@@ -220,13 +208,11 @@ export default function GlobalUsersSection() {
       <AnimatedOnScroll variant="fadeUp">
         <section className="relative overflow-hidden bg-black py-28">
 
-          {/* ORANGE GLOWS */}
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute -left-40 top-20 h-[420px] w-[420px] rounded-full bg-orange-500/40 blur-[160px]" />
             <div className="absolute -right-40 top-10 h-[460px] w-[460px] rounded-full bg-orange-400/40 blur-[180px]" />
           </div>
 
-          {/* HEADER */}
           <div className="relative z-10 mx-auto max-w-7xl px-6 mb-10">
             <span className="inline-block mb-3 rounded-full border border-white/20 px-4 py-1 text-[11px] tracking-[0.3em] text-white">
               Our Solutions
@@ -249,20 +235,16 @@ export default function GlobalUsersSection() {
                 overflow-hidden
               "
             >
-              {/* VIGNETTE */}
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/0 via-black/10 to-black/40" />
 
-              {/* PHONES STAGE */}
               <div className="relative h-[420px] flex items-center justify-center">
                 {phones.map((p, i) => (
                   <Phone key={i} phone={p} index={i} active={active} />
                 ))}
               </div>
 
-              {/* BOTTOM CUT MASK */}
               <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-[160px] bg-gradient-to-t from-[#2a221d] to-transparent" />
 
-              {/* FLOATING CARD — 10K */}
               <div className="absolute left-[32%] top-[28%] z-40">
                 <FloatingStatCard
                   value={10}
@@ -273,7 +255,6 @@ export default function GlobalUsersSection() {
                 />
               </div>
 
-              {/* FLOATING CARD — 25K */}
               <div className="absolute right-[30%] top-[55%] z-40">
                 <FloatingStatCard
                   value={25}
