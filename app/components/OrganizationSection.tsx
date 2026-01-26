@@ -16,23 +16,28 @@ export default function OrganizationSection() {
             </h2>
 
             <div className="flex justify-center">
-              <div
-                className="
-                  group
-                  relative
-                  h-[200px] sm:h-[220px]
-                  w-full max-w-[320px] sm:max-w-[360px]
-                  rounded-2xl
-                  bg-gradient-to-r
-                  from-black
-                  to-yellow-900/80
-                  transition-all
-                  duration-500
-                  hover:-translate-y-3
-                  hover:scale-105
-                  hover:shadow-[0_25px_60px_rgba(255,120,40,0.3),0_0_40px_rgba(255,120,40,0.15)]
-                "
-              >
+             <div
+  className="
+    group
+    relative
+
+    /* RESPONSIVE SHAPE */
+    aspect-[4/5] sm:aspect-[3/2] lg:aspect-[4/3]
+    w-full sm:w-[360px] lg:w-[320px]
+
+    rounded-2xl
+    bg-gradient-to-r
+    from-black
+    to-yellow-900/80
+
+    transition-all
+    duration-500
+    hover:-translate-y-3
+    hover:scale-105
+    hover:shadow-[0_25px_60px_rgba(255,120,40,0.3),0_0_40px_rgba(255,120,40,0.15)]
+  "
+>
+
                 <div className="pointer-events-none absolute inset-0 rounded-2xl bg-black/40" />
                 <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 shadow-[inset_0_0_50px_rgba(255,120,40,0.25)]" />
                 <div className="relative flex h-full flex-col items-center justify-center gap-4">

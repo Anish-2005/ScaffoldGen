@@ -14,30 +14,31 @@ export default function FeaturesSection() {
                     <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6">
                         <div className="absolute left-1/2 top-1/2 z-30 -translate-x-1/2 -translate-y-1/2 hidden lg:block">
                             <motion.div
-                                className="absolute inset-[-42px] z-10"
-                                initial={{ rotate: 0 }}
-                                animate={{ rotate: 360 }}
-                                transition={{
-                                    duration: 22,
-                                    repeat: Infinity,
-                                    ease: "linear",
-                                }}
-                            >
-                                <div
-                                    className="absolute inset-0 rounded-full"
-                                    style={{
-                                        background:
-                                            "conic-gradient(from 0deg, rgba(255,115,0,0.0), rgba(255,115,0,0.95), rgba(255,115,0,0.0))",
-                                        maskImage:
-                                            "radial-gradient(circle, transparent 70%, black 71%, black 73%, transparent 74%)",
-                                        WebkitMaskImage:
-                                            "radial-gradient(circle, transparent 70%, black 71%, black 73%, transparent 74%)",
-                                        filter: "blur(3px)",
-                                    }}
-                                />
-                                <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-orange-500 shadow-[0_0_12px_rgba(255,140,80,0.9)]" />
-                                <span className="absolute left-1/2 bottom-0 h-2 w-2 -translate-x-1/2 rounded-full bg-orange-500 shadow-[0_0_12px_rgba(255,140,80,0.9)]" />
-                            </motion.div>
+  className="absolute left-1/2 top-1/2 z-10 h-[172px] w-[172px] -translate-x-1/2 -translate-y-1/2"
+  initial={{ rotate: 0 }}
+  animate={{ rotate: 360 }}
+  transition={{
+    duration: 22,
+    repeat: Infinity,
+    ease: "linear",
+  }}
+>
+  <div
+    className="absolute inset-0 rounded-full"
+    style={{
+      background:
+        "conic-gradient(from 0deg, rgba(255,115,0,0.0), rgba(255,115,0,0.95), rgba(255,115,0,0.0))",
+      maskImage:
+        "radial-gradient(circle, transparent 70%, black 71%, black 73%, transparent 74%)",
+      WebkitMaskImage:
+        "radial-gradient(circle, transparent 70%, black 71%, black 73%, transparent 74%)",
+      filter: "blur(3px)",
+    }}
+  />
+  <span className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-orange-500 shadow-[0_0_12px_rgba(255,140,80,0.9)]" />
+  <span className="absolute left-1/2 bottom-0 h-2 w-2 -translate-x-1/2 rounded-full bg-orange-500 shadow-[0_0_12px_rgba(255,140,80,0.9)]" />
+</motion.div>
+
 
                             <div className="relative flex h-[88px] w-[88px] items-center justify-center rounded-full bg-[#1a1411] shadow-[0_0_90px_rgba(255,120,40,0.45)]">
                                 <div className="flex h-[44px] w-[44px] items-center justify-center rounded-xl bg-orange-500">
