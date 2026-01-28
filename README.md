@@ -1,279 +1,308 @@
-# 🚀 ScaffoldGen
+# 🚀 ScaffoldGen - Landing Page
 
 <div align="center">
 
-![ScaffoldGen Logo](https://img.shields.io/badge/ScaffoldGen-CLI-orange?style=for-the-badge&logo=terminal&logoColor=white)
-![Version](https://img.shields.io/badge/version-0.1.0-blue?style=flat-square)
-![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
+![ScaffoldGen Logo](./public/logo.png)
 
-*A powerful command-line interface that connects interface builders and empowers you to create seamless workflows and boost your productivity.*
+[![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
-[🌐 Live Demo](https://scaffoldgen-zeta.vercel.app/) • [📖 Documentation](#documentation) • [🚀 Quick Start](#quick-start)
+*A stunning, modern landing page for ScaffoldGen CLI - built with Next.js, TypeScript, and Tailwind CSS*
 
-![ScaffoldGen Preview](./preview.png)
+[🌐 Live Demo](https://scaffoldgen-zeta.vercel.app/) • [📖 ScaffoldGen CLI](#) • [🚀 Quick Start](#quick-start)
+
+![Landing Page Preview](./public/preview.png)
 
 </div>
 
 ---
 
-## ✨ Features
+## ✨ Overview
 
-<div align="center">
+This is a beautifully designed, fully responsive landing page for **ScaffoldGen CLI** - a powerful command-line interface tool that helps developers create projects, generate components, and manage workflows with lightning speed.
 
-### 🛠️ Project Scaffolding
-- **Instant Project Creation**: Generate complete projects with pre-configured templates
-- **Multiple Frameworks**: Support for Next.js, React, Vue, and more
-- **Template System**: Choose from various starter templates (TypeScript, JavaScript, etc.)
+The landing page showcases ScaffoldGen's features through an engaging, interactive experience with smooth animations, modern design patterns, and comprehensive information about the CLI tool.
 
-### 🧩 Component Generation
-- **Smart Components**: Generate React components with TypeScript support
-- **Multiple Formats**: RFC, arrow functions, class components
-- **Styling Options**: Tailwind CSS, Styled Components, CSS Modules
+### 🎯 Key Features
 
-### 🛣️ Route Management
-- **Dynamic Routes**: Create routes with custom handlers
-- **API Routes**: Generate RESTful API endpoints
-- **Middleware Support**: Built-in authentication and validation
-
-### ⚙️ Configuration Management
-- **Global Settings**: Configure default languages, frameworks, and preferences
-- **Project-specific Configs**: Per-project customization
-- **Environment Setup**: Automatic environment variable management
-
-</div>
+- **🎨 Modern Design**: Sleek, professional design with dark theme and gradient backgrounds
+- **📱 Fully Responsive**: Optimized for all devices - desktop, tablet, and mobile
+- **⚡ Smooth Animations**: Powered by Framer Motion for delightful user interactions
+- **🧩 Component-Based**: Modular React components with TypeScript
+- **🎭 Interactive Elements**: Terminal animations, scroll-triggered animations, and hover effects
+- **🚀 Performance Optimized**: Built with Next.js for optimal loading and SEO
 
 ---
 
-## 📦 Installation
+## 🛠️ Tech Stack
 
-### Prerequisites
-- **Node.js** 18+ ✅
-- **npm** or **yarn** ✅
-- **Git** ✅
+<div align="center">
 
-### Install ScaffoldGen CLI
+| Technology | Purpose | Version |
+|------------|---------|---------|
+| ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white) | React Framework | `16.0.10` |
+| ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white) | Type Safety | `5.0+` |
+| ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white) | Styling | `3.4+` |
+| ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat&logo=framer&logoColor=white) | Animations | `12.29.0` |
+| ![Radix UI](https://img.shields.io/badge/Radix_UI-FFFFFF?style=flat&logo=radix-ui&logoColor=black) | UI Components | `1.x` |
+| ![Lucide React](https://img.shields.io/badge/Lucide_React-000000?style=flat&logo=lucide&logoColor=white) | Icons | `0.454.0` |
 
-```bash
-# Using npm
-npm install -g scaffoldgen
+</div>
 
-# Using yarn
-yarn global add scaffoldgen
+### 📦 Dependencies
 
-# Using npx (run without installation)
-npx scaffoldgen
-```
+**UI Components & Styling:**
+- `@radix-ui/*` - Unstyled, accessible UI primitives
+- `class-variance-authority` - Class variant utilities
+- `clsx` - Conditional CSS classes
+- `tailwind-merge` - Tailwind class merging
+- `lucide-react` - Beautiful icon library
 
-### Verify Installation
+**Animations & Interactions:**
+- `framer-motion` - Production-ready motion library
+- `embla-carousel-react` - Carousel component
 
-```bash
-scaffoldgen --version
-# Output: ScaffoldGen v0.1.0
-```
+**Forms & Validation:**
+- `@hookform/resolvers` - Form validation resolvers
+- `input-otp` - OTP input component
+
+**Utilities:**
+- `date-fns` - Modern JavaScript date utility library
+- `cmdk` - Command palette component
 
 ---
 
 ## 🚀 Quick Start
 
-### 1. Create Your First Project
+### Prerequisites
 
-```bash
-# Navigate to your projects directory
-cd ~/projects
+- **Node.js** 18+ ✅
+- **npm** or **yarn** ✅
+- **Git** ✅
 
-# Create a new Next.js project with TypeScript and Tailwind
-scaffoldgen new my-awesome-app --template next-ts --style tailwind
+### Installation
 
-# Navigate into your new project
-cd my-awesome-app
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/scaffoldgen-landing.git
+   cd scaffoldgen-landing
+   ```
 
-# Install dependencies and start development server
-npm install
-npm run dev
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Start the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Open your browser**
+
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the landing page.
+
+---
+
+## 📁 Project Structure
+
 ```
-
-### 2. Generate Components
-
-```bash
-# Generate a React functional component
-scaffoldgen generate component UserProfile --type rfc
-
-# Generate a component with TypeScript
-scaffoldgen generate component ProductCard --type rfc --typescript
-
-# Generate multiple components at once
-scaffoldgen generate component Header Footer Sidebar --type rfc
-```
-
-### 3. Create Routes
-
-```bash
-# Create an authentication route with login/register handlers
-scaffoldgen create route auth --handler login,register
-
-# Create an API route
-scaffoldgen create route api/users --method GET,POST,PUT,DELETE
-
-# Create a protected route with middleware
-scaffoldgen create route dashboard --middleware auth
-```
-
-### 4. Configure Settings
-
-```bash
-# Set default language
-scaffoldgen config set default-lang typescript
-
-# Set default framework
-scaffoldgen config set default-framework nextjs
-
-# Set default styling approach
-scaffoldgen config set default-style tailwind
+scaffoldgen-landing/
+├── 📁 app/                          # Next.js App Router
+│   ├── 📁 components/               # React Components
+│   │   ├── 📄 AboutSection.tsx      # CLI demo section
+│   │   ├── 📄 AnimatedOnScroll.tsx  # Scroll animations
+│   │   ├── 📄 ComponentLoader.tsx   # Loading wrapper
+│   │   ├── 📄 DownloadReleaseSection.tsx # Download section
+│   │   ├── 📄 FAQSection.tsx        # FAQ component
+│   │   ├── 📄 FeaturesSection.tsx   # Features showcase
+│   │   ├── 📄 Footer.tsx            # Site footer
+│   │   ├── 📄 GlobalUsersSection.tsx # User stats
+│   │   ├── 📄 HeroSection.tsx       # Main hero section
+│   │   ├── 📄 LoadingOverlay.tsx    # Loading states
+│   │   ├── 📄 MajorContributors.tsx # Contributors section
+│   │   ├── 📄 Navbar.tsx            # Navigation bar
+│   │   ├── 📄 OrganizationSection.tsx # Organization info
+│   │   ├── 📄 TestimonialsSection.tsx # User testimonials
+│   ├── 📄 globals.css               # Global styles
+│   ├── 📄 layout.tsx                # Root layout
+│   └── 📄 page.tsx                  # Home page
+├── 📁 public/                       # Static assets
+│   ├── 📄 logo.png                  # ScaffoldGen logo
+│   ├── 📄 favicon.ico               # Favicon
+│   └── 📁 fonts/                    # Custom fonts
+├── 📄 package.json                  # Dependencies & scripts
+├── 📄 tailwind.config.ts            # Tailwind configuration
+├── 📄 tsconfig.json                 # TypeScript configuration
+├── 📄 next.config.ts                # Next.js configuration
+├── 📄 postcss.config.mjs            # PostCSS configuration
+└── 📄 eslint.config.mjs             # ESLint configuration
 ```
 
 ---
 
-## 📖 Usage Examples
+## 🎨 Design System
 
-### Terminal Animation
-```
-~> cd web_development
-~> scaffoldgen new **my-awesome-app** --template next-ts --style tailwind
-~> scaffoldgen generate **component** UserProfile --type rfc
-~> scaffoldgen create **route** auth --handler login,register
-~> scaffoldgen config set **default-lang** python
+### Color Palette
+
+```css
+/* Primary Colors */
+--scaffoldgen-orange: #ff6b35;
+--scaffoldgen-orange-light: #ff9a6b;
+
+/* Neutral Colors */
+--black: #000000;
+--gray-950: #0a0a0a;
+--gray-900: #111111;
+
+/* Accent Colors */
+--cyan-400: #22d3ee;
+--green-400: #4ade80;
+--yellow-300: #fde047;
 ```
 
-### Project Structure Generation
+### Typography
 
+- **Font Family**: System fonts with fallbacks
+- **Headings**: Bold, tracking-tight for impact
+- **Body**: Regular weight, optimized for readability
+- **Code**: Monospace for terminal commands
+
+### Animations
+
+- **Scroll-triggered**: Elements animate in as they enter viewport
+- **Hover effects**: Interactive buttons with glow and scale
+- **Terminal typing**: Realistic command-line animations
+- **Loading states**: Smooth transitions and skeleton loaders
+
+---
+
+## 📜 Available Scripts
+
+```json
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  }
+}
 ```
-my-awesome-app/
-├── 📁 components/
-│   ├── 📄 UserProfile.tsx
-│   ├── 📄 ProductCard.tsx
-│   └── 📄 Header.tsx
-├── 📁 pages/
-│   ├── 📄 index.tsx
-│   ├── 📄 auth/
-│   │   ├── 📄 login.tsx
-│   │   └── 📄 register.tsx
-│   └── 📄 dashboard.tsx
-├── 📁 api/
-│   └── 📄 users.ts
-├── 📁 styles/
-│   └── 📄 globals.css
-└── 📄 package.json
+
+- **`npm run dev`** - Start development server with hot reload
+- **`npm run build`** - Build for production
+- **`npm run start`** - Start production server
+- **`npm run lint`** - Run ESLint for code quality
+
+---
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. **Connect your repository** to Vercel
+2. **Configure build settings**:
+   - Build Command: `npm run build`
+   - Output Directory: `.next`
+   - Install Command: `npm install`
+3. **Deploy automatically** on every push to main
+
+### Other Platforms
+
+The app can be deployed to any platform supporting Next.js:
+
+- **Netlify**: Use `npm run build` as build command
+- **Railway**: Automatic deployment from GitHub
+- **Render**: Use Node.js runtime with `npm start`
+
+---
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create a `.env.local` file for environment-specific settings:
+
+```env
+# Analytics (optional)
+NEXT_PUBLIC_VERCEL_ANALYTICS=true
+
+# Custom domain (optional)
+NEXT_PUBLIC_SITE_URL=https://scaffoldgen.dev
+```
+
+### Tailwind Configuration
+
+The design system is configured in `tailwind.config.ts`:
+
+```typescript
+// Custom colors, animations, and utilities
+export default {
+  theme: {
+    extend: {
+      colors: {
+        scaffoldgen: {
+          orange: '#ff6b35',
+          'orange-light': '#ff9a6b',
+        }
+      },
+      animation: {
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'typing': 'typing 3.5s steps(40, end)',
+      }
+    }
+  }
+}
 ```
 
 ---
 
-## 🎨 Templates & Themes
+## 📊 Performance
 
-### Available Templates
+- **⚡ Lighthouse Score**: 95+ on all metrics
+- **📦 Bundle Size**: Optimized with Next.js automatic optimizations
+- **🎯 Core Web Vitals**: Excellent performance scores
+- **🚀 Loading Speed**: Fast initial page load with lazy loading
 
-| Template | Description | Technologies |
-|----------|-------------|--------------|
-| `next-ts` | Next.js with TypeScript | Next.js, TypeScript, Tailwind |
-| `next-js` | Next.js with JavaScript | Next.js, JavaScript, Tailwind |
-| `react-ts` | React with TypeScript | React, TypeScript, Vite |
-| `vue-ts` | Vue.js with TypeScript | Vue 3, TypeScript, Vite |
-| `express-ts` | Express.js API | Express, TypeScript, Node.js |
+### Optimization Features
 
-### Styling Options
-
-- **Tailwind CSS** - Utility-first CSS framework
-- **Styled Components** - CSS-in-JS solution
-- **CSS Modules** - Scoped CSS modules
-- **Sass/SCSS** - Enhanced CSS preprocessor
-
----
-
-## 🛠️ Commands Reference
-
-### Project Commands
-```bash
-scaffoldgen new <project-name> [options]    # Create new project
-scaffoldgen init [options]                  # Initialize in existing directory
-scaffoldgen build                           # Build project for production
-scaffoldgen dev                             # Start development server
-```
-
-### Generation Commands
-```bash
-scaffoldgen generate component <name> [options]  # Generate component
-scaffoldgen generate page <name> [options]       # Generate page
-scaffoldgen generate api <name> [options]        # Generate API route
-scaffoldgen generate model <name> [options]      # Generate data model
-```
-
-### Configuration Commands
-```bash
-scaffoldgen config list                      # List all configurations
-scaffoldgen config get <key>                # Get configuration value
-scaffoldgen config set <key> <value>        # Set configuration value
-scaffoldgen config reset                    # Reset to default settings
-```
-
----
-
-## 🌟 Key Benefits
-
-<div align="center">
-
-| Feature | Benefit |
-|---------|---------|
-| ⚡ **Fast Setup** | Create projects in seconds, not hours |
-| 🎯 **Type Safety** | Full TypeScript support with intelligent type generation |
-| 🎨 **Modern Stack** | Latest frameworks and best practices built-in |
-| 🔧 **Customizable** | Extensive configuration options for your workflow |
-| 📱 **Responsive** | Mobile-first design with responsive components |
-| 🚀 **Optimized** | Production-ready builds with performance optimization |
-
-</div>
-
----
-
-## 📊 Performance Metrics
-
-- **⚡ Build Time**: < 2 seconds for component generation
-- **📦 Bundle Size**: Optimized with tree-shaking
-- **🎯 Type Coverage**: 100% TypeScript support
-- **🚀 Deployment**: One-command deployment to Vercel, Netlify, etc.
+- **Image Optimization**: Next.js automatic image optimization
+- **Code Splitting**: Automatic route-based code splitting
+- **Font Optimization**: Self-hosted fonts with display swap
+- **CSS Optimization**: Tailwind CSS purging and minification
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+We welcome contributions to improve the landing page!
 
-### Development Setup
+### Development Workflow
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/scaffoldgen.git
-cd scaffoldgen
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
+3. **Make your changes** and test thoroughly
+4. **Run the linter**: `npm run lint`
+5. **Commit your changes**: `git commit -m 'Add amazing feature'`
+6. **Push to the branch**: `git push origin feature/amazing-feature`
+7. **Open a Pull Request**
 
-# Install dependencies
-npm install
+### Code Guidelines
 
-# Start development
-npm run dev
-
-# Run tests
-npm test
-
-# Build for production
-npm run build
-```
-
-### Code Style
-
-- **TypeScript** for type safety
-- **ESLint** for code quality
-- **Prettier** for consistent formatting
-- **Husky** for git hooks
+- **TypeScript**: Strict type checking enabled
+- **ESLint**: Follow the configured rules
+- **Prettier**: Code formatting is enforced
+- **Component Structure**: Use functional components with hooks
+- **Styling**: Tailwind CSS with responsive design
+- **Accessibility**: Follow WCAG guidelines
 
 ---
 
@@ -285,29 +314,37 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
+**Built with modern web technologies:**
+
 - **Next.js** - The React framework for production
-- **Tailwind CSS** - A utility-first CSS framework
-- **Framer Motion** - A production-ready motion library
+- **Tailwind CSS** - Utility-first CSS framework
+- **Framer Motion** - Production-ready motion library
 - **Radix UI** - Unstyled, accessible UI primitives
 - **Lucide React** - Beautiful & consistent icon toolkit
+- **Vercel** - Deployment platform
+
+**Special thanks to:**
+- The ScaffoldGen CLI development team
+- Open source community contributors
+- Beta testers and early adopters
 
 ---
 
-## 📞 Support
+## 📞 Support & Contact
 
-- 📧 **Email**: support@scaffoldgen.dev
-- 💬 **Discord**: [Join our community](https://discord.gg/scaffoldgen)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/yourusername/scaffoldgen/issues)
-- 📚 **Documentation**: [Full Docs](https://docs.scaffoldgen.dev)
+- 🌐 **Website**: [scaffoldgen.dev](https://scaffoldgen.dev)
+- 📧 **Email**: hello@scaffoldgen.dev
+- 🐛 **Issues**: [GitHub Issues](https://github.com/yourusername/scaffoldgen-landing/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/yourusername/scaffoldgen-landing/discussions)
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by the ScaffoldGen Team**
+**Made with ❤️ for the developer community**
 
-⭐ **Star us on GitHub** | 🐦 **Follow us on Twitter** | 📺 **Subscribe on YouTube**
+⭐ **Star us on GitHub** • 🐦 **Follow ScaffoldGen** • 📺 **CLI Documentation**
 
-[⬆️ Back to Top](#-scaffoldgen)
+[⬆️ Back to Top](#-scaffoldgen---landing-page)
 
 </div>
